@@ -1,0 +1,2 @@
+SapUI5-VisualStudioPlugin
+=========================
