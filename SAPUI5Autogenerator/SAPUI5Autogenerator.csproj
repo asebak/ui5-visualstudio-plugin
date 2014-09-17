@@ -161,10 +161,38 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
+    <ProjectReference Include="..\i18n\i18n.csproj">
+      <Project>{20FD3BC3-6FBA-4AB7-BB15-D6E28B730981}</Project>
+      <Name>i18n</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\JSViewDesktop\JSViewDesktop.csproj">
+      <Project>{44372993-763D-4E2E-961C-D2326F6870F0}</Project>
+      <Name>JSViewDesktop</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\JSViewMobile\JSViewMobile.csproj">
+      <Project>{FB7569CA-2646-48AE-846C-5C78F2FE7EE5}</Project>
+      <Name>JSViewMobile</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
     <ProjectReference Include="..\Mobile\Mobile.csproj">
       <Project>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</Project>
       <Name>Mobile</Name>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
+    <ProjectReference Include="..\XMLViewMobile\XMLViewMobile.csproj">
+      <Project>{905D3069-4032-4C3F-BD22-B819976FB512}</Project>
+      <Name>XMLViewMobile</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
