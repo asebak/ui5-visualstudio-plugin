@@ -15,7 +15,15 @@
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" OpenInEditor="true">Class1.cs</ProjectItem>
+      <Folder Name="i18n" TargetFolderName="i18n">
+        <ProjectItem ReplaceParameters="false" TargetFileName="i18n.properties">i18n.properties</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>
+      <Folder Name="util" TargetFolderName="util" />
+      <Folder Name="view" TargetFolderName="view" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

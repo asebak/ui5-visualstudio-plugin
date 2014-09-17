@@ -78,9 +78,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="AssemblyInfo.cs" />
-    <None Include="Class1.cs" />
+    <None Include="i18n\i18n.properties" />
     <None Include="ProjectTemplate.csproj" />
     <None Include="Desktop.ico" />
+    <None Include="Web.config" />
+    <None Include="Web.Debug.config" />
+    <None Include="Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="Desktop.vstemplate" />
@@ -101,6 +104,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />

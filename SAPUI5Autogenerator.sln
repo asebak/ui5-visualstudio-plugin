@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Desktop", "Desktop\Desktop.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mobile", "Mobile\Mobile.csproj", "{7447843E-0B98-4C04-B78A-CDFE2123F9B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "T4Templates", "T4Templates", "{D55D8855-746C-4591-B44E-D9EA591369A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Wizards", "Wizards", "{299EA3E3-49A1-46B0-BFB8-3BD62ECF7683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
