@@ -80,13 +80,13 @@
     <None Include="AssemblyInfo.cs" />
     <None Include="i18n\i18n.properties" />
     <None Include="ProjectTemplate.csproj" />
-    <None Include="Mobile.ico" />
+    <None Include="SapUI5App.ico" />
     <None Include="Web.config" />
     <None Include="Web.Debug.config" />
     <None Include="Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="Mobile.vstemplate" />
+    <VSTemplate Include="SapUI5App.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

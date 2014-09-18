@@ -154,13 +154,6 @@
     <Content Include="Resources\Package.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Desktop\Desktop.csproj">
-      <Project>{48CCA01A-FCBF-4ECC-95D6-541D572E44E0}</Project>
-      <Name>Desktop</Name>
-      <VSIXSubPath>ProjectTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
     <ProjectReference Include="..\i18n\i18n.csproj">
       <Project>{20FD3BC3-6FBA-4AB7-BB15-D6E28B730981}</Project>
       <Name>i18n</Name>
@@ -182,9 +175,9 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-    <ProjectReference Include="..\Mobile\Mobile.csproj">
+    <ProjectReference Include="..\Mobile\SapUI5App.csproj">
       <Project>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</Project>
-      <Name>Mobile</Name>
+      <Name>SapUI5App</Name>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
