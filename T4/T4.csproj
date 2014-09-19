@@ -39,7 +39,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HTMLView.cs" />
+    <Compile Include="JavascriptView.cs" />
+    <Compile Include="JSONView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="XMLView.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CodeGeneratorHelpers\CodeGeneratorHelpers.csproj">
