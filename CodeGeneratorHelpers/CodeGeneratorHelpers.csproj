@@ -47,8 +47,67 @@
     <Compile Include="SapUI5Library.cs" />
     <Compile Include="SapUI5Project.cs" />
     <Compile Include="SapUI5ProjectType.cs" />
+    <Compile Include="T4\HTMLView.cs">
+      <DependentUpon>HTMLView.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="T4\IndexDesktop.cs">
+      <DependentUpon>IndexDesktop.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="T4\IndexMobile.cs">
+      <DependentUpon>IndexMobile.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="T4\JSONView.cs">
+      <DependentUpon>JSONView.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="T4\JSView.cs">
+      <DependentUpon>JSView.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="T4\XMLView.cs">
+      <DependentUpon>XMLView.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="View.cs" />
     <Compile Include="XMLView.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="T4\HTMLView.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HTMLView.cs</LastGenOutput>
+    </None>
+    <None Include="T4\IndexDesktop.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexDesktop.cs</LastGenOutput>
+    </None>
+    <None Include="T4\IndexMobile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexMobile.cs</LastGenOutput>
+    </None>
+    <None Include="T4\JSONView.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>JSONView.cs</LastGenOutput>
+    </None>
+    <None Include="T4\JSView.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>JSView.cs</LastGenOutput>
+    </None>
+    <None Include="T4\XMLView.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>XMLView.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -8,7 +8,7 @@ namespace CodeGeneratorHelpers
         {
             this.MVCViewType = "sap.ui.core.mvc.ViewType.JSON";
         }
-        public string createFromT4Template()
+        public string createFromT4Template(SapUI5ProjectType type)
         {
             throw new NotImplementedException();
         }

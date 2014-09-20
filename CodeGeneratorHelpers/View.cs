@@ -1,4 +1,7 @@
-﻿namespace CodeGeneratorHelpers
+﻿using System.Collections.Generic;
+using CodeGeneratorHelpers.T4;
+
+namespace CodeGeneratorHelpers
 {
     public class View
     {
