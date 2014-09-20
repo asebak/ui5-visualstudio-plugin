@@ -2,8 +2,7 @@
 {
     public interface IView
     {
-        string viewContent { get;}
         string viewExtension { get; }
-        string createFromT4Template();
+        string createFromT4Template(SapUI5ProjectType type);
     }
 }

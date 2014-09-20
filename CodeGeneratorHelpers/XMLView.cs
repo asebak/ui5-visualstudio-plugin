@@ -8,9 +8,6 @@ namespace CodeGeneratorHelpers
         {
             this.MVCViewType = "sap.ui.core.mvc.ViewType.XML";
         }
-
-
-        public string viewContent { get { return ""; } }
         public string viewExtension { get { return "xml"; }}
         public string createFromT4Template()
         {

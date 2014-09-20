@@ -8,10 +8,6 @@ namespace CodeGeneratorHelpers
         {
             this.MVCViewType = "sap.ui.core.mvc.ViewType.JSON";
         }
-
-        public string viewContent { get { return ""; } }
-
-
         public string createFromT4Template()
         {
             throw new NotImplementedException();

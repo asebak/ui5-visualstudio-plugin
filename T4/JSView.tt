@@ -1,0 +1,29 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+sap.ui.jsview("mobile.f", {
+
+	/** Specifies the Controller belonging to this View. 
+	* In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
+	* @memberOf mobile.f
+	*/ 
+	getControllerName : function() {
+		return "mobile.f";
+	},
+
+	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
+	* Since the Controller is given to this method, its event handlers can be attached right away. 
+	* @memberOf mobile.f
+	*/ 
+	createContent : function(oController) {
+ 		return new sap.m.Page({
+			title: "Title",
+			content: [
+			
+			]
+		});
+	}
+
+});

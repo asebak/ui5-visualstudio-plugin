@@ -52,7 +52,7 @@ namespace SapUI5AppWizard
         /// <param name="project">The project that finished generating.</param>
         public void ProjectFinishedGenerating(Project project)
         {
-            var viewContents = this.mView.createFromT4Template();
+            var viewContents = this.mView.createFromT4Template(this.mType);
             //add view to main folder
             //get access to project index.html file
         }
