@@ -40,6 +40,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HTMLView.cs" />
+    <Compile Include="IndexDesktop.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexDesktop.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IndexMobile.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IndexMobile.tt</DependentUpon>
+    </Compile>
     <Compile Include="JavascriptView.cs" />
     <Compile Include="JSONView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +61,19 @@
       <Project>{562a0d89-ac39-41f5-8bc9-19578678c437}</Project>
       <Name>CodeGeneratorHelpers</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IndexDesktop.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexDesktop.cs</LastGenOutput>
+    </None>
+    <None Include="IndexMobile.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexMobile.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

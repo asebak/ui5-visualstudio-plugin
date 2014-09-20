@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005"
+            xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
     <Name>Sap UI5 Application</Name>
     <Description>Project Template for creating and SAP UI5 Desktop or Mobile Application</Description>
@@ -15,15 +17,19 @@
   <TemplateContent>
     <Project File="ProjectTemplate.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
-        <Folder Name="i18n" TargetFolderName="i18n">
-          <ProjectItem ReplaceParameters="false" TargetFileName="i18n.properties">i18n.properties</ProjectItem>
-        </Folder>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>
-        <Folder Name="util" TargetFolderName="util" />
-        <Folder Name="view" TargetFolderName="view" />
-        <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
+      <Folder Name="i18n" TargetFolderName="i18n">
+        <ProjectItem ReplaceParameters="false" TargetFileName="i18n.properties">i18n.properties</ProjectItem>
+      </Folder>
+      <Folder Name="main" TargetFolderName="i18n">
+        <ProjectItem ReplaceParameters="false" TargetFileName="controller.js">controller.js</ProjectItem>
+        <ProjectItem ReplaceParameters="false" TargetFileName="view.js">view.js</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>
+      <Folder Name="util" TargetFolderName="util" />
+      <Folder Name="view" TargetFolderName="view" />
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
     </Project>
   </TemplateContent>
   <WizardExtension>
