@@ -77,8 +77,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Class.cs" />
     <None Include="i18n.ico" />
+    <None Include="i18n.properties" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="i18n.vstemplate" />
