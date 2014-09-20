@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CodeGeneratorHelpers
 {
@@ -11,7 +12,17 @@ namespace CodeGeneratorHelpers
         public string viewExtension { get { return "xml"; }}
         public string createFromT4Template(SapUI5ProjectType type)
         {
-            throw new NotImplementedException();
+            var xmlTemplate = new T4.XMLView
+            {
+                Session =
+                    new Dictionary<string, object>
+                    {
+                        {"ControllerName", this.ControllerName},
+                        {"IsMobile", type == SapUI5ProjectType.Mobile}
+                    }
+            };
+            xmlTemplate.Initialize();
+            return xmlTemplate.TransformText();
         }
     }
 }

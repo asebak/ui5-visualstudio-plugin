@@ -52,13 +52,8 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="T4\IndexDesktop.cs">
-      <DependentUpon>IndexDesktop.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="T4\IndexMobile.cs">
-      <DependentUpon>IndexMobile.tt</DependentUpon>
+    <Compile Include="T4\Index.cs">
+      <DependentUpon>Index.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -85,13 +80,9 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>HTMLView.cs</LastGenOutput>
     </None>
-    <None Include="T4\IndexDesktop.tt">
+    <None Include="T4\Index.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>IndexDesktop.cs</LastGenOutput>
-    </None>
-    <None Include="T4\IndexMobile.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>IndexMobile.cs</LastGenOutput>
+      <LastGenOutput>Index.cs</LastGenOutput>
     </None>
     <None Include="T4\JSONView.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

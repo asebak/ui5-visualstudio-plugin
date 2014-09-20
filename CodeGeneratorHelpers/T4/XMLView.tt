@@ -3,12 +3,12 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ parameter name="NameSpace" type="System.string" #>
+<#@ parameter name="ControllerName" type="System.string" #>
+<#@ parameter name="IsMobile" type="System.Boolean" #>
 
 <#
-var mModuleName = this.Module.Name;
-var mEntityName = this.Module.Entity.Name;
-var mIsCollection = (this.Module.Entity.Set == EntitySet.Collection);
+var isMobile = this.IsMobile;
+var controllerName = this.ControllerName;
 #>
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 		controllerName="dasdsa.dsad" xmlns:html="http://www.w3.org/1999/xhtml">

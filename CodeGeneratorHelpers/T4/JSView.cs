@@ -30,11 +30,10 @@ namespace CodeGeneratorHelpers.T4
         {
             this.Write("\r\n");
             
-            #line 8 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
+            #line 9 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
 
-var mModuleName = this.Module.Name;
-var mEntityName = this.Module.Entity.Name;
-var mIsCollection = (this.Module.Entity.Set == EntitySet.Collection);
+var isMobile = this.IsMobile;
+var controllerName = this.ControllerName;
 
             
             #line default
@@ -68,16 +67,29 @@ var mIsCollection = (this.Module.Entity.Set == EntitySet.Collection);
         
         #line 1 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
 
-private string _NameSpaceField;
+private string _ControllerNameField;
 
 /// <summary>
-/// Access the NameSpace parameter of the template.
+/// Access the ControllerName parameter of the template.
 /// </summary>
-private string NameSpace
+private string ControllerName
 {
     get
     {
-        return this._NameSpaceField;
+        return this._ControllerNameField;
+    }
+}
+
+private bool _IsMobileField;
+
+/// <summary>
+/// Access the IsMobile parameter of the template.
+/// </summary>
+private bool IsMobile
+{
+    get
+    {
+        return this._IsMobileField;
     }
 }
 
@@ -89,18 +101,32 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool NameSpaceValueAcquired = false;
-if (this.Session.ContainsKey("NameSpace"))
+bool ControllerNameValueAcquired = false;
+if (this.Session.ContainsKey("ControllerName"))
 {
-    this._NameSpaceField = ((string)(this.Session["NameSpace"]));
-    NameSpaceValueAcquired = true;
+    this._ControllerNameField = ((string)(this.Session["ControllerName"]));
+    ControllerNameValueAcquired = true;
 }
-if ((NameSpaceValueAcquired == false))
+if ((ControllerNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("NameSpace");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("ControllerName");
     if ((data != null))
     {
-        this._NameSpaceField = ((string)(data));
+        this._ControllerNameField = ((string)(data));
+    }
+}
+bool IsMobileValueAcquired = false;
+if (this.Session.ContainsKey("IsMobile"))
+{
+    this._IsMobileField = ((bool)(this.Session["IsMobile"]));
+    IsMobileValueAcquired = true;
+}
+if ((IsMobileValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("IsMobile");
+    if ((data != null))
+    {
+        this._IsMobileField = ((bool)(data));
     }
 }
 

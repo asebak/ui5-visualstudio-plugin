@@ -18,9 +18,9 @@ namespace CodeGeneratorHelpers.T4
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\IndexMobile.tt"
+    #line 1 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
-    public partial class IndexMobile : IndexMobileBase
+    public partial class Index : IndexBase
     {
 #line hidden
         /// <summary>
@@ -30,11 +30,11 @@ namespace CodeGeneratorHelpers.T4
         {
             this.Write("\r\n");
             
-            #line 8 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\IndexMobile.tt"
+            #line 10 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
 
-var mModuleName = this.Module.Name;
-var mEntityName = this.Module.Entity.Name;
-var mIsCollection = (this.Module.Entity.Set == EntitySet.Collection);
+var isMobile = this.IsMobile;
+var controllerName = this.ControllerName;
+var extension = this.ViewExtension;
 
             
             #line default
@@ -44,20 +44,19 @@ var mIsCollection = (this.Module.Entity.Set == EntitySet.Collection);
 	<head>
 		<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
 		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		
 
 		<script src=""resources/sap-ui-core.js""
 				id=""sap-ui-bootstrap""
-				data-sap-ui-libs=""sap.m""
+				data-sap-ui-libs=""sap.ui.commons,sap.ui.table,sap.ui.ux3""
 				data-sap-ui-theme=""sap_bluecrystal"">
 		</script>
 		<script>
-				sap.ui.localResources(""mobile"");
+				sap.ui.localResources(""desktop"");
 				sap.ui.localResources(""util"");
 				sap.ui.localResources(""i18n"");
-				var app = new sap.m.App({initialPage:""idf1""});
-				var page = sap.ui.view({id:""idf1"", viewName:""mobile.f"", type:sap.ui.core.mvc.ViewType.JS});
-				app.addPage(page);
-				app.placeAt(""content"");
+				var view = sap.ui.view({id:""idd1"", viewName:""desktop.d"", type:sap.ui.core.mvc.ViewType.XML});
+				view.placeAt(""content"");
 		</script>
 
 	</head>
@@ -68,18 +67,44 @@ var mIsCollection = (this.Module.Entity.Set == EntitySet.Collection);
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\IndexMobile.tt"
+        #line 1 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
 
-private string _NameSpaceField;
+private string _ControllerNameField;
 
 /// <summary>
-/// Access the NameSpace parameter of the template.
+/// Access the ControllerName parameter of the template.
 /// </summary>
-private string NameSpace
+private string ControllerName
 {
     get
     {
-        return this._NameSpaceField;
+        return this._ControllerNameField;
+    }
+}
+
+private bool _IsMobileField;
+
+/// <summary>
+/// Access the IsMobile parameter of the template.
+/// </summary>
+private bool IsMobile
+{
+    get
+    {
+        return this._IsMobileField;
+    }
+}
+
+private string _ViewExtensionField;
+
+/// <summary>
+/// Access the ViewExtension parameter of the template.
+/// </summary>
+private string ViewExtension
+{
+    get
+    {
+        return this._ViewExtensionField;
     }
 }
 
@@ -91,18 +116,46 @@ public virtual void Initialize()
 {
     if ((this.Errors.HasErrors == false))
     {
-bool NameSpaceValueAcquired = false;
-if (this.Session.ContainsKey("NameSpace"))
+bool ControllerNameValueAcquired = false;
+if (this.Session.ContainsKey("ControllerName"))
 {
-    this._NameSpaceField = ((string)(this.Session["NameSpace"]));
-    NameSpaceValueAcquired = true;
+    this._ControllerNameField = ((string)(this.Session["ControllerName"]));
+    ControllerNameValueAcquired = true;
 }
-if ((NameSpaceValueAcquired == false))
+if ((ControllerNameValueAcquired == false))
 {
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("NameSpace");
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("ControllerName");
     if ((data != null))
     {
-        this._NameSpaceField = ((string)(data));
+        this._ControllerNameField = ((string)(data));
+    }
+}
+bool IsMobileValueAcquired = false;
+if (this.Session.ContainsKey("IsMobile"))
+{
+    this._IsMobileField = ((bool)(this.Session["IsMobile"]));
+    IsMobileValueAcquired = true;
+}
+if ((IsMobileValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("IsMobile");
+    if ((data != null))
+    {
+        this._IsMobileField = ((bool)(data));
+    }
+}
+bool ViewExtensionValueAcquired = false;
+if (this.Session.ContainsKey("ViewExtension"))
+{
+    this._ViewExtensionField = ((string)(this.Session["ViewExtension"]));
+    ViewExtensionValueAcquired = true;
+}
+if ((ViewExtensionValueAcquired == false))
+{
+    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("ViewExtension");
+    if ((data != null))
+    {
+        this._ViewExtensionField = ((string)(data));
     }
 }
 
@@ -123,7 +176,7 @@ if ((NameSpaceValueAcquired == false))
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
-    public class IndexMobileBase
+    public class IndexBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

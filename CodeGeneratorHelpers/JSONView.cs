@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CodeGeneratorHelpers
 {
@@ -10,7 +11,17 @@ namespace CodeGeneratorHelpers
         }
         public string createFromT4Template(SapUI5ProjectType type)
         {
-            throw new NotImplementedException();
+            var jsonTemplate = new T4.JSView
+            {
+                Session =
+                    new Dictionary<string, object>
+                    {
+                        {"ControllerName", this.ControllerName},
+                        {"IsMobile", type == SapUI5ProjectType.Mobile}
+                    }
+            };
+            jsonTemplate.Initialize();
+            return jsonTemplate.TransformText();
         }
 
         public string viewExtension { get { return "json"; } }

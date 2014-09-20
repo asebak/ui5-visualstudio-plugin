@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CodeGeneratorHelpers
 {
@@ -11,7 +12,17 @@ namespace CodeGeneratorHelpers
         public string viewExtension { get { return "html"; } }
         public string createFromT4Template(SapUI5ProjectType type)
         {
-            throw new NotImplementedException();
+            var htmlTemplate = new T4.HTMLView
+            {
+                Session =
+                    new Dictionary<string, object>
+                    {
+                        {"ControllerName", this.ControllerName},
+                        {"IsMobile", type == SapUI5ProjectType.Mobile}
+                    }
+            };
+            htmlTemplate.Initialize();
+            return htmlTemplate.TransformText();
         }
     }
 }
