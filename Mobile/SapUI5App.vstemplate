@@ -26,8 +26,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>
       <Folder Name="util" TargetFolderName="util" />
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Debug.config">Web.Debug.config</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Web.Release.config">Web.Release.config</ProjectItem>
     </Project>
   </TemplateContent>
   <WizardExtension>

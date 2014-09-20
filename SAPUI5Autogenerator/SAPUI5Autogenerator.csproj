@@ -161,20 +161,6 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-    <ProjectReference Include="..\JSViewDesktop\JSViewDesktop.csproj">
-      <Project>{44372993-763D-4E2E-961C-D2326F6870F0}</Project>
-      <Name>JSViewDesktop</Name>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
-    <ProjectReference Include="..\JSViewMobile\JSViewMobile.csproj">
-      <Project>{FB7569CA-2646-48AE-846C-5C78F2FE7EE5}</Project>
-      <Name>JSViewMobile</Name>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
-    </ProjectReference>
     <ProjectReference Include="..\Mobile\SapUI5App.csproj">
       <Project>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</Project>
       <Name>SapUI5App</Name>
@@ -185,13 +171,6 @@
     <ProjectReference Include="..\SapUI5AppWizard\SapUI5AppWizard.csproj">
       <Project>{2f5e1eb6-62c4-4abf-a3c2-980234f0e7c8}</Project>
       <Name>SapUI5AppWizard</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\XMLViewMobile\XMLViewMobile.csproj">
-      <Project>{905D3069-4032-4C3F-BD22-B819976FB512}</Project>
-      <Name>XMLViewMobile</Name>
-      <VSIXSubPath>ItemTemplates</VSIXSubPath>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -47,17 +47,18 @@ if(!isMobile){
             
             #line default
             #line hidden
-            this.Write("\t\t<script src=\"resources/sap-ui-core.js\"\r\n\t\t\t\tid=\"sap-ui-bootstrap\"\r\n\t\t\t\tdata-sap" +
-                    "-ui-libs=\"sap.ui.commons,sap.ui.table,sap.ui.ux3\"\r\n\t\t\t\tdata-sap-ui-theme=\"sap_bl" +
-                    "uecrystal\">\r\n\t\t</script>\r\n   ");
+            this.Write("\t\t<script src=\"https://openui5.hana.ondemand.com/resources/sap-ui-core.js\"\r\n\t\t\t\ti" +
+                    "d=\"sap-ui-bootstrap\"\r\n\t\t\t\tdata-sap-ui-libs=\"sap.ui.commons,sap.ui.table,sap.ui.u" +
+                    "x3\"\r\n\t\t\t\tdata-sap-ui-theme=\"sap_bluecrystal\">\r\n\t\t</script>\r\n   ");
             
             #line 25 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
  }else{
             
             #line default
             #line hidden
-            this.Write("   \t\t<script src=\"resources/sap-ui-core.js\"\r\n\t\t\t\tid=\"sap-ui-bootstrap\"\r\n\t\t\t\tdata-" +
-                    "sap-ui-libs=\"sap.m\"\r\n\t\t\t\tdata-sap-ui-theme=\"sap_bluecrystal\">\r\n\t\t</script>\r\n   ");
+            this.Write("   \t\t<script src=\"https://openui5.hana.ondemand.com/resources/sap-ui-core.js\"\r\n\t\t" +
+                    "\t\tid=\"sap-ui-bootstrap\"\r\n\t\t\t\tdata-sap-ui-libs=\"sap.m\"\r\n\t\t\t\tdata-sap-ui-theme=\"sa" +
+                    "p_bluecrystal\">\r\n\t\t</script>\r\n   ");
             
             #line 31 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
 }

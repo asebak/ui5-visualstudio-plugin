@@ -82,8 +82,6 @@
     <None Include="ProjectTemplate.csproj" />
     <None Include="SapUI5App.ico" />
     <None Include="Web.config" />
-    <None Include="Web.Debug.config" />
-    <None Include="Web.Release.config" />
   </ItemGroup>
   <ItemGroup>
     <VSTemplate Include="SapUI5App.vstemplate" />

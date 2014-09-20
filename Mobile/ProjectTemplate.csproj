@@ -51,12 +51,6 @@
   <ItemGroup>
     <Content Include="i18n\i18n.properties" />
     <Content Include="$rootmodulepath$\Main.controller.js" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="util\" />
