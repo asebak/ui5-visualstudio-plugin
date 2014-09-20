@@ -28,6 +28,32 @@ namespace T4
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write(@"<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src=""resources/sap-ui-core.js""
+				id=""sap-ui-bootstrap""
+				data-sap-ui-libs=""sap.m""
+				data-sap-ui-theme=""sap_bluecrystal"">
+		</script>
+		<script>
+				sap.ui.localResources(""mobile"");
+				sap.ui.localResources(""util"");
+				sap.ui.localResources(""i18n"");
+				var app = new sap.m.App({initialPage:""idf1""});
+				var page = sap.ui.view({id:""idf1"", viewName:""mobile.f"", type:sap.ui.core.mvc.ViewType.JS});
+				app.addPage(page);
+				app.placeAt(""content"");
+		</script>
+
+	</head>
+	<body class=""sapUiBody"" role=""application"">
+		<div id=""content""></div>
+	</body>
+</html>");
             return this.GenerationEnvironment.ToString();
         }
     }

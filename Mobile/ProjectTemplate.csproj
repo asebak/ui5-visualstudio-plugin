@@ -50,8 +50,7 @@
 	</ItemGroup>
   <ItemGroup>
     <Content Include="i18n\i18n.properties" />
-    <Content Include="main\controller.js" />
-    <Content Include="main\view.js" />
+    <Content Include="main\Main.controller.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

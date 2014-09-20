@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CodeGeneratorHelpers;
 using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
 
@@ -14,6 +15,8 @@ namespace SapUI5AppWizard
     {
         private SapUI5AppWizard mForm;
         private DTE mDTE;
+        private IView mView;
+        private SapUI5ProjectType mType;
         /// <summary>
         /// Runs custom wizard logic at the beginning of a template wizard run.
         /// </summary>
@@ -36,6 +39,11 @@ namespace SapUI5AppWizard
                 throw new WizardBackoutException();
             }
             this.mDTE = automationObject as DTE;
+            var rootFolderName = replacementsDictionary["$safeprojectname$"].ToLowerInvariant()
+                .Replace(" ", string.Empty);
+            replacementsDictionary.Add("$rootmodulepath$", rootFolderName);
+            this.mView = this.mForm.SelectedView(rootFolderName + ".Main");
+            this.mType = this.mForm.SelectedProject;
         }
 
         /// <summary>
@@ -44,6 +52,7 @@ namespace SapUI5AppWizard
         /// <param name="project">The project that finished generating.</param>
         public void ProjectFinishedGenerating(Project project)
         {
+
         }
 
         /// <summary>
