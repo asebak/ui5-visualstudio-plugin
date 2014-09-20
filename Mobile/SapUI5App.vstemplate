@@ -11,7 +11,7 @@
     <SortOrder>1000</SortOrder>
     <TemplateID>cca974b6-d3ce-479d-af94-b7c8c98b18a6</TemplateID>
     <CreateNewFolder>true</CreateNewFolder>
-    <DefaultName>Sap UI5 Application</DefaultName>
+    <DefaultName>UI5Application</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>
   </TemplateData>
   <TemplateContent>
@@ -21,7 +21,7 @@
         <ProjectItem ReplaceParameters="false" TargetFileName="i18n.properties">i18n.properties</ProjectItem>
       </Folder>
       <Folder Name="main" TargetFolderName="main">
-        <ProjectItem ReplaceParameters="false" TargetFileName="Main.controller.js">Main.controller.js</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Main.controller.js">Main.controller.js</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>
       <Folder Name="util" TargetFolderName="util" />

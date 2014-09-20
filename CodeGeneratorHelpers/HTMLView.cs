@@ -9,8 +9,9 @@ namespace CodeGeneratorHelpers
             this.MVCViewType = "sap.ui.core.mvc.ViewType.HTML";
         }
 
-        public string viewContent { get; set; }
-        public void createFromT4Template()
+        public string viewContent { get { return ""; } }
+        public string viewExtension { get { return "html"; } }
+        public string createFromT4Template()
         {
             throw new NotImplementedException();
         }
