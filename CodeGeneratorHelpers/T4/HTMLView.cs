@@ -38,9 +38,15 @@ var controllerName = this.ControllerName;
             
             #line default
             #line hidden
-            this.Write("<template data-controller-name=\"ffggg.fff\">\r\n\t<div data-sap-ui-type=\"sap.m.Page\" " +
-                    "data-title=\"Title\">\r\n\t\t<div data-sap-ui-aggregation=\"content\">\r\n\t\t\r\n\t\t</div>\r\n\t<" +
-                    "/div>\r\n</template>");
+            this.Write("<template data-controller-name=\"");
+            
+            #line 13 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\HTMLView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n\t<div data-sap-ui-type=\"sap.m.Page\" data-title=\"Title\">\r\n\t\t<div data-sap-ui-a" +
+                    "ggregation=\"content\">\r\n\t\t\r\n\t\t</div>\r\n\t</div>\r\n</template>");
             return this.GenerationEnvironment.ToString();
         }
         

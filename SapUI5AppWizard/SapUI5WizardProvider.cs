@@ -17,6 +17,7 @@ namespace SapUI5AppWizard
         private DTE mDTE;
         private IView mView;
         private SapUI5ProjectType mType;
+        private string mRootPath;
         /// <summary>
         /// Runs custom wizard logic at the beginning of a template wizard run.
         /// </summary>
@@ -39,10 +40,10 @@ namespace SapUI5AppWizard
                 throw new WizardBackoutException();
             }
             this.mDTE = automationObject as DTE;
-            var rootFolderName = replacementsDictionary["$safeprojectname$"].ToLowerInvariant()
+            this.mRootPath = replacementsDictionary["$safeprojectname$"].ToLowerInvariant()
                 .Replace(" ", string.Empty);
-            replacementsDictionary.Add("$rootmodulepath$", rootFolderName);
-            this.mView = this.mForm.SelectedView(rootFolderName + ".Main");
+            replacementsDictionary.Add("$rootmodulepath$", this.mRootPath);
+            this.mView = this.mForm.SelectedView(this.mRootPath + ".Main");
             this.mType = this.mForm.SelectedProject;
         }
 
@@ -52,9 +53,23 @@ namespace SapUI5AppWizard
         /// <param name="project">The project that finished generating.</param>
         public void ProjectFinishedGenerating(Project project)
         {
+            //adds view
             var viewContents = this.mView.createFromT4Template(this.mType);
-            //add view to main folder
-            //get access to project index.html file
+            var tempFile = Path.GetTempPath() + string.Format("Main.view.{0}", this.mView.viewExtension);
+            this.WriteToFile(tempFile, viewContents);
+            var projectItem = ProjectHelper.GetFolderPath(project, this.mRootPath);
+            if (projectItem != null)
+            {
+                projectItem.ProjectItems.AddFromFileCopy(tempFile);
+            }
+            File.Delete(tempFile);
+            this.WriteToFile(ProjectHelper.GetFilePath(project, "Index.html"),
+                Index.createContentFromT4(this.mType, this.mView.viewExtension.ToUpper(), this.mRootPath));
+        }
+
+        private void WriteToFile(string iPath, string iContent)
+        {
+            File.WriteAllText(iPath, iContent);
         }
 
         /// <summary>

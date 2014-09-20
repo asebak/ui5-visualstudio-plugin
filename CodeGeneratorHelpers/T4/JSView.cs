@@ -28,9 +28,8 @@ namespace CodeGeneratorHelpers.T4
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
             
-            #line 9 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
+            #line 8 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
 
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
@@ -38,30 +37,41 @@ var controllerName = this.ControllerName;
             
             #line default
             #line hidden
-            this.Write(@"sap.ui.jsview(""mobile.f"", {
-
-	/** Specifies the Controller belonging to this View. 
-	* In the case that it is not implemented, or that ""null"" is returned, this View does not have a Controller.
-	* @memberOf mobile.f
-	*/ 
-	getControllerName : function() {
-		return ""mobile.f"";
-	},
-
-	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
-	* Since the Controller is given to this method, its event handlers can be attached right away. 
-	* @memberOf mobile.f
-	*/ 
-	createContent : function(oController) {
- 		return new sap.m.Page({
-			title: ""Title"",
-			content: [
-			
-			]
-		});
-	}
-
-});");
+            this.Write("sap.ui.jsview(\"");
+            
+            #line 12 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\", {\r\n\r\n\t/** Specifies the Controller belonging to this View. \r\n\t* In the case th" +
+                    "at it is not implemented, or that \"null\" is returned, this View does not have a " +
+                    "Controller.\r\n\t* @memberOf ");
+            
+            #line 16 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\t*/ \r\n\tgetControllerName : function() {\r\n\t\treturn \"");
+            
+            #line 19 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\";\r\n\t},\r\n\r\n\t/** Is initially called once after the Controller has been instantiat" +
+                    "ed. It is the place where the UI is constructed. \r\n\t* Since the Controller is gi" +
+                    "ven to this method, its event handlers can be attached right away. \r\n\t* @memberO" +
+                    "f ");
+            
+            #line 24 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n\t*/ \r\n\tcreateContent : function(oController) {\r\n \t\treturn new sap.m.Page({\r\n\t\t\t" +
+                    "title: \"Title\",\r\n\t\t\tcontent: [\r\n\t\t\t\r\n\t\t\t]\r\n\t\t});\r\n\t}\r\n\r\n});");
             return this.GenerationEnvironment.ToString();
         }
         

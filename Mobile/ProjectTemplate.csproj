@@ -50,7 +50,7 @@
 	</ItemGroup>
   <ItemGroup>
     <Content Include="i18n\i18n.properties" />
-    <Content Include="main\Main.controller.js" />
+    <Content Include="$rootmodulepath$\Main.controller.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -60,7 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="util\" />
-    <Folder Include="view\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

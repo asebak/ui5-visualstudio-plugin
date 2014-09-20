@@ -5,24 +5,23 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ parameter name="ControllerName" type="System.string" #>
 <#@ parameter name="IsMobile" type="System.Boolean" #>
-
 <#
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
-sap.ui.jsview("mobile.f", {
+sap.ui.jsview("<#=controllerName#>", {
 
 	/** Specifies the Controller belonging to this View. 
 	* In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
-	* @memberOf mobile.f
+	* @memberOf <#=controllerName#>
 	*/ 
 	getControllerName : function() {
-		return "mobile.f";
+		return "<#=controllerName#>";
 	},
 
 	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
 	* Since the Controller is given to this method, its event handlers can be attached right away. 
-	* @memberOf mobile.f
+	* @memberOf <#=controllerName#>
 	*/ 
 	createContent : function(oController) {
  		return new sap.m.Page({

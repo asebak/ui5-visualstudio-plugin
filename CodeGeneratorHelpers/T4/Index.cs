@@ -28,9 +28,8 @@ namespace CodeGeneratorHelpers.T4
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
             
-            #line 10 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 9 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
 
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
@@ -39,31 +38,100 @@ var extension = this.ViewExtension;
             
             #line default
             #line hidden
-            this.Write(@"<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"">
-		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
-		
-
-		<script src=""resources/sap-ui-core.js""
-				id=""sap-ui-bootstrap""
-				data-sap-ui-libs=""sap.ui.commons,sap.ui.table,sap.ui.ux3""
-				data-sap-ui-theme=""sap_bluecrystal"">
-		</script>
-		<script>
-				sap.ui.localResources(""desktop"");
-				sap.ui.localResources(""util"");
-				sap.ui.localResources(""i18n"");
-				var view = sap.ui.view({id:""idd1"", viewName:""desktop.d"", type:sap.ui.core.mvc.ViewType.XML});
-				view.placeAt(""content"");
-		</script>
-
-	</head>
-	<body class=""sapUiBody"" role=""application"">
-		<div id=""content""></div>
-	</body>
-</html>");
+            this.Write("<!DOCTYPE HTML>\r\n<html>\r\n\t<head>\r\n\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"I" +
+                    "E=edge\">\r\n\t\t<meta http-equiv=\'Content-Type\' content=\'text/html;charset=UTF-8\'/>\r" +
+                    "\n\t\t");
+            
+            #line 19 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+if(!isMobile){
+            
+            #line default
+            #line hidden
+            this.Write("\t\t<script src=\"resources/sap-ui-core.js\"\r\n\t\t\t\tid=\"sap-ui-bootstrap\"\r\n\t\t\t\tdata-sap" +
+                    "-ui-libs=\"sap.ui.commons,sap.ui.table,sap.ui.ux3\"\r\n\t\t\t\tdata-sap-ui-theme=\"sap_bl" +
+                    "uecrystal\">\r\n\t\t</script>\r\n   ");
+            
+            #line 25 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+ }else{
+            
+            #line default
+            #line hidden
+            this.Write("   \t\t<script src=\"resources/sap-ui-core.js\"\r\n\t\t\t\tid=\"sap-ui-bootstrap\"\r\n\t\t\t\tdata-" +
+                    "sap-ui-libs=\"sap.m\"\r\n\t\t\t\tdata-sap-ui-theme=\"sap_bluecrystal\">\r\n\t\t</script>\r\n   ");
+            
+            #line 31 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+}
+            
+            #line default
+            #line hidden
+            this.Write("   ");
+            
+            #line 32 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+ if(!isMobile){ 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t<script>\r\n\t\t\t\tsap.ui.localResources(\"");
+            
+            #line 34 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n\t\t\t\tsap.ui.localResources(\"util\");\r\n\t\t\t\tsap.ui.localResources(\"i18n\");\r\n\t\t\t\t" +
+                    "var view = sap.ui.view({viewName:\"");
+            
+            #line 37 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write(".Main\", type:sap.ui.core.mvc.ViewType.");
+            
+            #line 37 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(extension));
+            
+            #line default
+            #line hidden
+            this.Write("});\r\n\t\t\t\tview.placeAt(\"content\");\r\n\t\t</script>\r\n");
+            
+            #line 40 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+}else{ 
+            
+            #line default
+            #line hidden
+            this.Write("\t\t<script>\r\n\t\t\t\tsap.ui.localResources(\"");
+            
+            #line 42 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\");\r\n\t\t\t\tsap.ui.localResources(\"util\");\r\n\t\t\t\tsap.ui.localResources(\"i18n\");\r\n\t\t\t\t" +
+                    "var app = new sap.m.App({initialPage:\"app\"});\r\n\t\t\t\tvar page = sap.ui.view({id:\"a" +
+                    "pp\", viewName:\"");
+            
+            #line 46 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write(".Main\", type:sap.ui.core.mvc.ViewType.");
+            
+            #line 46 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(extension));
+            
+            #line default
+            #line hidden
+            this.Write("});\r\n\t\t\t\tapp.addPage(page);\r\n\t\t\t\tapp.placeAt(\"content\");\r\n\t\t</script>\r\n");
+            
+            #line 50 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("\t</head>\r\n\t<body class=\"sapUiBody\" role=\"application\">\r\n\t\t<div id=\"content\"></div" +
+                    ">\r\n\t</body>\r\n</html>");
             return this.GenerationEnvironment.ToString();
         }
         

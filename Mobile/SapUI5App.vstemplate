@@ -20,7 +20,7 @@
       <Folder Name="i18n" TargetFolderName="i18n">
         <ProjectItem ReplaceParameters="false" TargetFileName="i18n.properties">i18n.properties</ProjectItem>
       </Folder>
-      <Folder Name="main" TargetFolderName="main">
+      <Folder Name="main" TargetFolderName="$rootmodulepath$">
         <ProjectItem ReplaceParameters="true" TargetFileName="Main.controller.js">Main.controller.js</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>

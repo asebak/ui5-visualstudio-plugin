@@ -28,9 +28,8 @@ namespace CodeGeneratorHelpers.T4
         /// </summary>
         public virtual string TransformText()
         {
-            this.Write("\r\n");
             
-            #line 9 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+            #line 8 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
 
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
@@ -39,8 +38,15 @@ var controllerName = this.ControllerName;
             #line default
             #line hidden
             this.Write("<core:View xmlns:core=\"sap.ui.core\" xmlns:mvc=\"sap.ui.core.mvc\" xmlns=\"sap.m\"\r\n\t\t" +
-                    "controllerName=\"dasdsa.dsad\" xmlns:html=\"http://www.w3.org/1999/xhtml\">\r\n\t<Page " +
-                    "title=\"Title\">\r\n\t\t<content>\r\n\t\r\n\t\t</content>\r\n\t</Page>\r\n</core:View>");
+                    "controllerName=\"");
+            
+            #line 13 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\" xmlns:html=\"http://www.w3.org/1999/xhtml\">\r\n\t<Page title=\"Title\">\r\n\t\t<content>\r" +
+                    "\n\t\r\n\t\t</content>\r\n\t</Page>\r\n</core:View>");
             return this.GenerationEnvironment.ToString();
         }
         

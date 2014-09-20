@@ -5,14 +5,13 @@
 <#@ import namespace="System.Collections.Generic" #>
 <#@ parameter name="ControllerName" type="System.string" #>
 <#@ parameter name="IsMobile" type="System.Boolean" #>
-
 <#
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
 {
 	"Type":"sap.ui.core.mvc.JSONView",
-	"controllerName":"jkmnkn.fdsdf",
+	"controllerName":"<#=controllerName#>",
 	"content": [{
 		"Type":"sap.m.Page",
 		"title":"Title",

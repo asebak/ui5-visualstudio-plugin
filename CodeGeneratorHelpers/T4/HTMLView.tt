@@ -10,7 +10,7 @@
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
-<template data-controller-name="ffggg.fff">
+<template data-controller-name="<#=controllerName#>">
 	<div data-sap-ui-type="sap.m.Page" data-title="Title">
 		<div data-sap-ui-aggregation="content">
 		
