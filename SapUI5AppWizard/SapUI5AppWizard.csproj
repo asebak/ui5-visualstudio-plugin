@@ -86,6 +86,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CodeGeneratorHelpers\CodeGeneratorHelpers.csproj">
+      <Project>{562a0d89-ac39-41f5-8bc9-19578678c437}</Project>
+      <Name>CodeGeneratorHelpers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

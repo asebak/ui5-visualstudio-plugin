@@ -30,19 +30,19 @@
         {
             this.stepWizardControl1 = new AeroWizard.StepWizardControl();
             this.wizardPage1 = new AeroWizard.WizardPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.LibraryType = new System.Windows.Forms.GroupBox();
             this.mobile = new System.Windows.Forms.RadioButton();
             this.desktop = new System.Windows.Forms.RadioButton();
-            this.wizardPage2 = new AeroWizard.WizardPage();
+            this.MainViewType = new AeroWizard.WizardPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.html = new System.Windows.Forms.RadioButton();
+            this.json = new System.Windows.Forms.RadioButton();
+            this.xml = new System.Windows.Forms.RadioButton();
+            this.javascript = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.stepWizardControl1)).BeginInit();
             this.wizardPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.wizardPage2.SuspendLayout();
+            this.LibraryType.SuspendLayout();
+            this.MainViewType.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,30 +51,30 @@
             this.stepWizardControl1.Location = new System.Drawing.Point(0, 0);
             this.stepWizardControl1.Name = "stepWizardControl1";
             this.stepWizardControl1.Pages.Add(this.wizardPage1);
-            this.stepWizardControl1.Pages.Add(this.wizardPage2);
+            this.stepWizardControl1.Pages.Add(this.MainViewType);
             this.stepWizardControl1.Size = new System.Drawing.Size(724, 422);
             this.stepWizardControl1.TabIndex = 0;
             this.stepWizardControl1.Title = "SAP UI5 Application";
             // 
             // wizardPage1
             // 
-            this.wizardPage1.Controls.Add(this.groupBox1);
+            this.wizardPage1.Controls.Add(this.LibraryType);
             this.wizardPage1.Name = "wizardPage1";
-            this.wizardPage1.NextPage = this.wizardPage2;
+            this.wizardPage1.NextPage = this.MainViewType;
             this.wizardPage1.Size = new System.Drawing.Size(526, 247);
             this.wizardPage1.TabIndex = 2;
             this.wizardPage1.Text = "Library";
             // 
-            // groupBox1
+            // LibraryType
             // 
-            this.groupBox1.Controls.Add(this.mobile);
-            this.groupBox1.Controls.Add(this.desktop);
-            this.groupBox1.Location = new System.Drawing.Point(30, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(479, 196);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Library";
+            this.LibraryType.Controls.Add(this.mobile);
+            this.LibraryType.Controls.Add(this.desktop);
+            this.LibraryType.Location = new System.Drawing.Point(30, 28);
+            this.LibraryType.Name = "LibraryType";
+            this.LibraryType.Size = new System.Drawing.Size(479, 196);
+            this.LibraryType.TabIndex = 0;
+            this.LibraryType.TabStop = false;
+            this.LibraryType.Text = "Library";
             // 
             // mobile
             // 
@@ -99,20 +99,20 @@
             this.desktop.Text = "Desktop";
             this.desktop.UseVisualStyleBackColor = true;
             // 
-            // wizardPage2
+            // MainViewType
             // 
-            this.wizardPage2.Controls.Add(this.groupBox2);
-            this.wizardPage2.Name = "wizardPage2";
-            this.wizardPage2.Size = new System.Drawing.Size(526, 247);
-            this.wizardPage2.TabIndex = 3;
-            this.wizardPage2.Text = "Initial View Type";
+            this.MainViewType.Controls.Add(this.groupBox2);
+            this.MainViewType.Name = "MainViewType";
+            this.MainViewType.Size = new System.Drawing.Size(526, 247);
+            this.MainViewType.TabIndex = 3;
+            this.MainViewType.Text = "Initial View Type";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton6);
-            this.groupBox2.Controls.Add(this.radioButton5);
-            this.groupBox2.Controls.Add(this.radioButton4);
-            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.html);
+            this.groupBox2.Controls.Add(this.json);
+            this.groupBox2.Controls.Add(this.xml);
+            this.groupBox2.Controls.Add(this.javascript);
             this.groupBox2.Location = new System.Drawing.Point(22, 21);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(488, 202);
@@ -120,50 +120,50 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Type";
             // 
-            // radioButton6
+            // html
             // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(7, 157);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(69, 24);
-            this.radioButton6.TabIndex = 3;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "HTML";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.html.AutoSize = true;
+            this.html.Location = new System.Drawing.Point(7, 157);
+            this.html.Name = "html";
+            this.html.Size = new System.Drawing.Size(69, 24);
+            this.html.TabIndex = 3;
+            this.html.TabStop = true;
+            this.html.Text = "HTML";
+            this.html.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // json
             // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(7, 118);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(65, 24);
-            this.radioButton5.TabIndex = 2;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "JSON";
-            this.radioButton5.UseVisualStyleBackColor = true;
+            this.json.AutoSize = true;
+            this.json.Location = new System.Drawing.Point(7, 118);
+            this.json.Name = "json";
+            this.json.Size = new System.Drawing.Size(65, 24);
+            this.json.TabIndex = 2;
+            this.json.TabStop = true;
+            this.json.Text = "JSON";
+            this.json.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // xml
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(7, 76);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(59, 24);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "XML";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.xml.AutoSize = true;
+            this.xml.Location = new System.Drawing.Point(7, 76);
+            this.xml.Name = "xml";
+            this.xml.Size = new System.Drawing.Size(59, 24);
+            this.xml.TabIndex = 1;
+            this.xml.TabStop = true;
+            this.xml.Text = "XML";
+            this.xml.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // javascript
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Checked = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 36);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(94, 24);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Javascript";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.javascript.AutoSize = true;
+            this.javascript.Checked = true;
+            this.javascript.Location = new System.Drawing.Point(7, 36);
+            this.javascript.Name = "javascript";
+            this.javascript.Size = new System.Drawing.Size(94, 24);
+            this.javascript.TabIndex = 0;
+            this.javascript.TabStop = true;
+            this.javascript.Text = "Javascript";
+            this.javascript.UseVisualStyleBackColor = true;
             // 
             // SapUI5AppWizard
             // 
@@ -174,9 +174,9 @@
             this.Name = "SapUI5AppWizard";
             ((System.ComponentModel.ISupportInitialize)(this.stepWizardControl1)).EndInit();
             this.wizardPage1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.wizardPage2.ResumeLayout(false);
+            this.LibraryType.ResumeLayout(false);
+            this.LibraryType.PerformLayout();
+            this.MainViewType.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -187,15 +187,15 @@
 
         private AeroWizard.StepWizardControl stepWizardControl1;
         private AeroWizard.WizardPage wizardPage1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox LibraryType;
         private System.Windows.Forms.RadioButton mobile;
         private System.Windows.Forms.RadioButton desktop;
-        private AeroWizard.WizardPage wizardPage2;
+        private AeroWizard.WizardPage MainViewType;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton html;
+        private System.Windows.Forms.RadioButton json;
+        private System.Windows.Forms.RadioButton xml;
+        private System.Windows.Forms.RadioButton javascript;
     }
 }
 

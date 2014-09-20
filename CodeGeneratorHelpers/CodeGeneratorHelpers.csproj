@@ -39,11 +39,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HTMLView.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="JavascriptView.cs" />
+    <Compile Include="JSONView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SapUI5Library.cs" />
     <Compile Include="SapUI5Project.cs" />
     <Compile Include="SapUI5ProjectType.cs" />
+    <Compile Include="View.cs" />
+    <Compile Include="XMLView.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
