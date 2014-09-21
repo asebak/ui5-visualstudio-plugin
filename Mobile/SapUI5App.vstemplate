@@ -7,9 +7,9 @@
     <Description>Project Template for creating and SAP UI5 Desktop or Mobile Application</Description>
     <Icon>SapUI5App.ico</Icon>
     <ProjectType>CSharp</ProjectType>
-    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <!--<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>-->
     <SortOrder>1000</SortOrder>
-    <TemplateID>cca974b6-d3ce-479d-af94-b7c8c98b18a6</TemplateID>
+    <!--<TemplateID>cca974b6-d3ce-479d-af94-b7c8c98b18a6</TemplateID>-->
     <CreateNewFolder>true</CreateNewFolder>
     <DefaultName>UI5Application</DefaultName>
     <ProvideDefaultName>true</ProvideDefaultName>

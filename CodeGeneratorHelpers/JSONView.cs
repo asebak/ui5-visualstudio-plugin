@@ -11,7 +11,7 @@ namespace CodeGeneratorHelpers
         }
         public string createFromT4Template(SapUI5ProjectType type)
         {
-            var jsonTemplate = new T4.JSView
+            var jsonTemplate = new T4.JSONView
             {
                 Session =
                     new Dictionary<string, object>
