@@ -38,15 +38,41 @@ var controllerName = this.ControllerName;
             
             #line default
             #line hidden
-            this.Write("<template data-controller-name=\"");
             
             #line 13 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\HTMLView.tt"
+if(isMobile){
+            
+            #line default
+            #line hidden
+            this.Write("<template data-controller-name=\"");
+            
+            #line 14 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\HTMLView.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
             #line hidden
             this.Write("\">\r\n\t<div data-sap-ui-type=\"sap.m.Page\" data-title=\"Title\">\r\n\t\t<div data-sap-ui-a" +
-                    "ggregation=\"content\">\r\n\t\t\r\n\t\t</div>\r\n\t</div>\r\n</template>");
+                    "ggregation=\"content\">\r\n\t\t\r\n\t\t</div>\r\n\t</div>\r\n</template>\r\n");
+            
+            #line 21 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\HTMLView.tt"
+}else{
+            
+            #line default
+            #line hidden
+            this.Write("<template data-controller-name=\"");
+            
+            #line 22 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\HTMLView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n\r\n</template>\r\n");
+            
+            #line 25 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\HTMLView.tt"
+}
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
         

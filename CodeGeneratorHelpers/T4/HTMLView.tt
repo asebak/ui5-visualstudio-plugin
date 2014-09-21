@@ -10,6 +10,7 @@
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
+<#if(isMobile){#>
 <template data-controller-name="<#=controllerName#>">
 	<div data-sap-ui-type="sap.m.Page" data-title="Title">
 		<div data-sap-ui-aggregation="content">
@@ -17,3 +18,8 @@ var controllerName = this.ControllerName;
 		</div>
 	</div>
 </template>
+<#}else{#>
+<template data-controller-name="<#=controllerName#>">
+
+</template>
+<#}#>

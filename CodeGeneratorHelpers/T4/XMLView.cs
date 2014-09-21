@@ -37,16 +37,43 @@ var controllerName = this.ControllerName;
             
             #line default
             #line hidden
+            
+            #line 12 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+if(isMobile){
+            
+            #line default
+            #line hidden
             this.Write("<core:View xmlns:core=\"sap.ui.core\" xmlns:mvc=\"sap.ui.core.mvc\" xmlns=\"sap.m\"\r\n\t\t" +
                     "controllerName=\"");
             
-            #line 13 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+            #line 14 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
             #line hidden
             this.Write("\" xmlns:html=\"http://www.w3.org/1999/xhtml\">\r\n\t<Page title=\"Title\">\r\n\t\t<content>\r" +
-                    "\n\t\r\n\t\t</content>\r\n\t</Page>\r\n</core:View>");
+                    "\n\t\r\n\t\t</content>\r\n\t</Page>\r\n</core:View>\r\n");
+            
+            #line 21 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+}else{
+            
+            #line default
+            #line hidden
+            this.Write("<core:View xmlns:core=\"sap.ui.core\" xmlns:mvc=\"sap.ui.core.mvc\" xmlns=\"sap.ui.com" +
+                    "mons\"\r\n\t\t\tcontrollerName=\"");
+            
+            #line 23 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\" xmlns:html=\"http://www.w3.org/1999/xhtml\">\r\n\r\n</core:View>\r\n");
+            
+            #line 26 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\XMLView.tt"
+}
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
         

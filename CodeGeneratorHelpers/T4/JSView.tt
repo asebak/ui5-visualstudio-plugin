@@ -9,6 +9,7 @@
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
+<#if(isMobile){#>
 sap.ui.jsview("<#=controllerName#>", {
 
 	/** Specifies the Controller belonging to this View. 
@@ -33,3 +34,23 @@ sap.ui.jsview("<#=controllerName#>", {
 	}
 
 });
+<#}else{#>
+sap.ui.jsview("<#=controllerName#>", {
+
+	/** Specifies the Controller belonging to this View. 
+	* In the case that it is not implemented, or that "null" is returned, this View does not have a Controller.
+	* @memberOf <#=controllerName#>
+	*/ 
+	getControllerName : function() {
+		return "<#=controllerName#>";
+	},
+
+	/** Is initially called once after the Controller has been instantiated. It is the place where the UI is constructed. 
+	* Since the Controller is given to this method, its event handlers can be attached right away. 
+	* @memberOf <#=controllerName#>
+	*/ 
+	createContent : function(oController) {
+
+	}
+});
+<#}#>

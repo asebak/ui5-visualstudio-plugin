@@ -9,6 +9,7 @@
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
+<#if(isMobile){#>
 {
 	"Type":"sap.ui.core.mvc.JSONView",
 	"controllerName":"<#=controllerName#>",
@@ -20,3 +21,12 @@ var controllerName = this.ControllerName;
 		]
 	}]
 }
+<#}else{#>
+{
+	"Type":"sap.ui.core.mvc.JSONView",
+	"controllerName":"<#=controllerName#>",
+	"content": [{
+	
+	}]
+}
+<#}#>

@@ -9,6 +9,7 @@
 var isMobile = this.IsMobile;
 var controllerName = this.ControllerName;
 #>
+<#if(isMobile){#>
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
 		controllerName="<#=controllerName#>" xmlns:html="http://www.w3.org/1999/xhtml">
 	<Page title="Title">
@@ -17,3 +18,9 @@ var controllerName = this.ControllerName;
 		</content>
 	</Page>
 </core:View>
+<#}else{#>
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.ui.commons"
+			controllerName="<#=controllerName#>" xmlns:html="http://www.w3.org/1999/xhtml">
+
+</core:View>
+<#}#>

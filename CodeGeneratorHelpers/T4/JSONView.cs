@@ -37,15 +37,41 @@ var controllerName = this.ControllerName;
             
             #line default
             #line hidden
+            
+            #line 12 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSONView.tt"
+if(isMobile){
+            
+            #line default
+            #line hidden
             this.Write("{\r\n\t\"Type\":\"sap.ui.core.mvc.JSONView\",\r\n\t\"controllerName\":\"");
             
-            #line 14 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSONView.tt"
+            #line 15 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSONView.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
             #line hidden
             this.Write("\",\r\n\t\"content\": [{\r\n\t\t\"Type\":\"sap.m.Page\",\r\n\t\t\"title\":\"Title\",\r\n\t\t\"content\":[\r\n\t\t" +
-                    "\r\n\t\t]\r\n\t}]\r\n}");
+                    "\r\n\t\t]\r\n\t}]\r\n}\r\n");
+            
+            #line 24 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSONView.tt"
+}else{
+            
+            #line default
+            #line hidden
+            this.Write("{\r\n\t\"Type\":\"sap.ui.core.mvc.JSONView\",\r\n\t\"controllerName\":\"");
+            
+            #line 27 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSONView.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write("\",\r\n\t\"content\": [{\r\n\t\r\n\t}]\r\n}\r\n");
+            
+            #line 32 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\JSONView.tt"
+}
+            
+            #line default
+            #line hidden
             return this.GenerationEnvironment.ToString();
         }
         
