@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SapUI5ItemWizardProvider.cs" />
     <Compile Include="SapUI5AppWizard.cs">
       <SubType>Form</SubType>
     </Compile>
