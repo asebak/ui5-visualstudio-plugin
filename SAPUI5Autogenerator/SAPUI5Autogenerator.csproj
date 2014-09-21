@@ -172,6 +172,13 @@
       <Project>{2f5e1eb6-62c4-4abf-a3c2-980234f0e7c8}</Project>
       <Name>SapUI5AppWizard</Name>
     </ProjectReference>
+    <ProjectReference Include="..\View\View.csproj">
+      <Project>{FFBB1D0E-A124-4F4A-9B4F-8CA403C8E5E8}</Project>
+      <Name>View</Name>
+      <VSIXSubPath>ItemTemplates</VSIXSubPath>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>

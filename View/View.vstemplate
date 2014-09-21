@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
+  <TemplateData>
+    <Name>View</Name>
+    <Description>View</Description>
+    <Icon>View.ico</Icon>
+    <TemplateID>dd8424ec-e1f4-4cce-b90e-d3cbde11c118</TemplateID>
+    <ProjectType>CSharp</ProjectType>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <DefaultName>view</DefaultName>
+  </TemplateData>
+  <TemplateContent>
+    <ProjectItem SubType="Code" TargetFileName="$controllername$.controller.js" ReplaceParameters="true">controller.js</ProjectItem>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>SapUI5AppWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>SapUI5AppWizard.SapUI5ItemWizardProvider</FullClassName>
+  </WizardExtension>
+</VSTemplate>
