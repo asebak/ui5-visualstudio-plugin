@@ -1,5 +1,7 @@
+![alt tag](http://sap.github.io/openui5/resources/OpenUI5_logo_only.png)
+
 ### Extension Overview
-This extension allows you to create basic sap ui5 applications that will run with IIS and an ASP.NET Project. It contains a project template that will allow you to create either a desktop or mobile HTML5 application for the SAP UI5 framework. 
+This unofficial extension allows you to create basic sap ui5 applications that will run with IIS and an ASP.NET Project. It contains a project template that will allow you to create either a desktop or mobile HTML5 application for the SAP UI5 framework. 
 You can install it from the visual studio gallery:
 http://visualstudiogallery.msdn.microsoft.com/aabd3f1e-fd57-43f5-8dde-54dd0355defe
 ### Features
