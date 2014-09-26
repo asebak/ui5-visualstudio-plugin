@@ -10,7 +10,7 @@
     <PreviewImage>OpenUI5_new_big_side (1).png</PreviewImage>
   </Metadata>
   <Installation InstalledByMsi="false">
-    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[11.0, 12.0]" />
     <InstallationTarget Version="[12.0,13.0)" Id="Microsoft.VisualStudio.Premium" />
     <InstallationTarget Version="[12.0,13.0)" Id="Microsoft.VisualStudio.Ultimate" />
     <InstallationTarget Version="[12.0,13.0)" Id="Microsoft.VisualStudio.Premium" />
