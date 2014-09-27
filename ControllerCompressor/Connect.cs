@@ -1,6 +1,7 @@
 ﻿#region Using
 
 using System;
+using System.Collections;
 using EnvDTE;
 using EnvDTE80;
 using Extensibility;
@@ -35,7 +36,7 @@ namespace ControllerCompressor
                 var menuBarCommandBar = ((CommandBars)this._applicationObject.CommandBars)["MenuBar"];
                 var toolsControl = menuBarCommandBar.Controls[toolsMenuName];
                 var cmdBars = (CommandBars) (_applicationObject.CommandBars);
-                var vsBarProject = cmdBars["Project"];
+                var vsBarProject = cmdBars["Folder"];
                 var toolsPopup = (CommandBarPopup) toolsControl;
                 CommandBarButton control = null;
                 try
@@ -67,7 +68,19 @@ namespace ControllerCompressor
         /// <exception cref="System.NotImplementedException"></exception>
         private void minimizeControl_Click(CommandBarButton ctrl, ref bool canceldefault)
         {
-            throw new NotImplementedException();
+            var selectedItems = (object[])this._applicationObject.ToolWindows.SolutionExplorer.SelectedItems;
+
+            foreach (UIHierarchyItem selectedUIHierarchyItem in selectedItems)
+            {
+                if (selectedUIHierarchyItem.Object is ProjectItem)
+                {
+                    var selectedItem = (ProjectItem) selectedUIHierarchyItem.Object;
+                    var path = (string) selectedItem.Properties.Item("FullPath").Value;
+                    var ui5Compressor = new UI5Compressor();
+                    ui5Compressor.Compress(path);
+                }
+            }
+
         }
 
         /// <summary>
