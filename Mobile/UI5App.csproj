@@ -32,8 +32,8 @@
     <ProjectGuid>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mobile</RootNamespace>
-    <AssemblyName>Mobile</AssemblyName>
+    <RootNamespace>UI5App</RootNamespace>
+    <AssemblyName>UI5App</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -80,11 +80,11 @@
     <None Include="AssemblyInfo.cs" />
     <None Include="i18n\i18n.properties" />
     <None Include="ProjectTemplate.csproj" />
-    <None Include="SapUI5App.ico" />
+    <None Include="UI5App.ico" />
     <None Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <VSTemplate Include="SapUI5App.vstemplate" />
+    <VSTemplate Include="UI5App.vstemplate" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

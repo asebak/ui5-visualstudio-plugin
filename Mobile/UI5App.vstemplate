@@ -5,7 +5,7 @@
   <TemplateData>
     <Name>OpenUI5 App</Name>
     <Description>Project Template for creating and OpenUI5 Desktop or Mobile Application</Description>
-    <Icon>SapUI5App.ico</Icon>
+    <Icon>UI5App.ico</Icon>
     <ProjectType>CSharp</ProjectType>
     <!--<RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>-->
     <SortOrder>1000</SortOrder>
@@ -29,7 +29,7 @@
     </Project>
   </TemplateContent>
   <WizardExtension>
-    <Assembly>SapUI5AppWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=null</Assembly>
-    <FullClassName>SapUI5AppWizard.SapUI5WizardProvider</FullClassName>
+    <Assembly>UI5AppWizard, Version=1.0.0.0, Culture=Neutral, PublicKeyToken=null</Assembly>
+    <FullClassName>UI5AppWizard.UI5WizardProvider</FullClassName>
   </WizardExtension>
 </VSTemplate>

@@ -49,9 +49,9 @@
     <Compile Include="JSONView.cs" />
     <Compile Include="ProjectHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SapUI5Library.cs" />
-    <Compile Include="SapUI5Project.cs" />
-    <Compile Include="SapUI5ProjectType.cs" />
+    <Compile Include="UI5Library.cs" />
+    <Compile Include="UI5Project.cs" />
+    <Compile Include="UI5ProjectType.cs" />
     <Compile Include="T4\HTMLView.cs">
       <DependentUpon>HTMLView.tt</DependentUpon>
       <AutoGen>True</AutoGen>

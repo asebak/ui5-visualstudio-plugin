@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace CodeGeneratorHelpers
 {
-    public class SapUI5Project
+    public class UI5Project
     {
         public string Name { get;set; }
-        public List<SapUI5Library> Libraries { get; set; }
-        public SapUI5ProjectType Type { get; set; }
+        public List<UI5Library> Libraries { get; set; }
+        public UI5ProjectType Type { get; set; }
         public IView View { get; set; }
     }
 }

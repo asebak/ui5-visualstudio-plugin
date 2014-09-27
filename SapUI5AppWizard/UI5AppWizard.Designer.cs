@@ -1,6 +1,6 @@
-﻿namespace SapUI5AppWizard
+﻿namespace UI5AppWizard
 {
-    partial class SapUI5AppWizard
+    partial class UI5AppWizard
     {
         /// <summary>
         /// Required designer variable.
@@ -171,7 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 422);
             this.Controls.Add(this.stepWizardControl1);
-            this.Name = "SapUI5AppWizard";
+            this.Name = "UI5AppWizard";
             ((System.ComponentModel.ISupportInitialize)(this.stepWizardControl1)).EndInit();
             this.wizardPage1.ResumeLayout(false);
             this.LibraryType.ResumeLayout(false);

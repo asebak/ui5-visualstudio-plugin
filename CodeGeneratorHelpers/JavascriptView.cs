@@ -11,7 +11,7 @@ namespace CodeGeneratorHelpers
             this.MVCViewType = "sap.ui.core.mvc.ViewType.JS";
         }
         public string viewExtension { get { return "js"; } }
-        public string createFromT4Template(SapUI5ProjectType type)
+        public string createFromT4Template(UI5ProjectType type)
         {
             var jsTemplate = new T4.JSView
             {
@@ -19,7 +19,7 @@ namespace CodeGeneratorHelpers
                     new Dictionary<string, object>
                     {
                         {"ControllerName", this.ControllerName},
-                        {"IsMobile", type == SapUI5ProjectType.Mobile}
+                        {"IsMobile", type == UI5ProjectType.Mobile}
                     }
             };
             jsTemplate.Initialize();

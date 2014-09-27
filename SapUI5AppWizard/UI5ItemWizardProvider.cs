@@ -5,14 +5,14 @@ using CodeGeneratorHelpers;
 using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
 
-namespace SapUI5AppWizard
+namespace UI5AppWizard
 {
-    public class SapUI5ItemWizardProvider: IWizard
+    public class UI5ItemWizardProvider: IWizard
     {
-        private SapUI5AppWizard mForm;
+        private UI5AppWizard mForm;
         private DTE mDTE;
         private IView mView;
-        private SapUI5ProjectType mType;
+        private UI5ProjectType mType;
         private string mRootPath;
         private string mControllerName;
 
@@ -25,7 +25,7 @@ namespace SapUI5AppWizard
         /// <param name="customParams">The custom parameters with which to perform parameter replacement in the project.</param>
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-            this.mForm = new SapUI5AppWizard();
+            this.mForm = new UI5AppWizard();
             this.mForm.ShowDialog();
             if (this.mForm.DialogResult == DialogResult.Cancel)
             {

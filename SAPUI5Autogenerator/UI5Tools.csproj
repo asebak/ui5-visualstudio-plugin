@@ -128,7 +128,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="SAPUI5AutogeneratorPackage.cs" />
+    <Compile Include="UI5AutogeneratorPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,16 +165,17 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-    <ProjectReference Include="..\Mobile\SapUI5App.csproj">
+    <ProjectReference Include="..\Mobile\UI5App.csproj">
       <Project>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</Project>
-      <Name>SapUI5App</Name>
+      <Name>UI5App</Name>
+      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3bBuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-    <ProjectReference Include="..\SapUI5AppWizard\SapUI5AppWizard.csproj">
+    <ProjectReference Include="..\SapUI5AppWizard\UI5AppWizard.csproj">
       <Project>{2f5e1eb6-62c4-4abf-a3c2-980234f0e7c8}</Project>
-      <Name>SapUI5AppWizard</Name>
+      <Name>UI5AppWizard</Name>
     </ProjectReference>
     <ProjectReference Include="..\View\View.csproj">
       <Project>{FFBB1D0E-A124-4F4A-9B4F-8CA403C8E5E8}</Project>

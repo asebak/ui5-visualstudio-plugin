@@ -8,7 +8,7 @@ namespace CodeGeneratorHelpers
 {
     public class Index
     {
-        public static string createContentFromT4(SapUI5ProjectType type, string viewExtension, string mainControllerName)
+        public static string createContentFromT4(UI5ProjectType type, string viewExtension, string mainControllerName)
         {
             var jsonTemplate = new T4.Index
             {
@@ -16,7 +16,7 @@ namespace CodeGeneratorHelpers
                     new Dictionary<string, object>
                     {
                         {"ControllerName", mainControllerName},
-                        {"IsMobile", type == SapUI5ProjectType.Mobile},
+                        {"IsMobile", type == UI5ProjectType.Mobile},
                         {"ViewExtension", viewExtension}
                     }
             };

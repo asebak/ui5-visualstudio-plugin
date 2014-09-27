@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using CodeGeneratorHelpers;
 using EnvDTE;
 using Microsoft.VisualStudio.TemplateWizard;
 
-namespace SapUI5AppWizard
+namespace UI5AppWizard
 {
-    public class SapUI5WizardProvider: IWizard
+    public class UI5WizardProvider: IWizard
     {
-        private SapUI5AppWizard mForm;
+        private UI5AppWizard mForm;
         private DTE mDTE;
         private IView mView;
-        private SapUI5ProjectType mType;
+        private UI5ProjectType mType;
         private string mRootPath;
         /// <summary>
         /// Runs custom wizard logic at the beginning of a template wizard run.
@@ -28,7 +24,7 @@ namespace SapUI5AppWizard
         /// <exception cref="Microsoft.VisualStudio.TemplateWizard.WizardBackoutException"></exception>
         public void RunStarted(object automationObject, Dictionary<string, string> replacementsDictionary, WizardRunKind runKind, object[] customParams)
         {
-            this.mForm = new SapUI5AppWizard();
+            this.mForm = new UI5AppWizard();
             this.mForm.ShowDialog();
             if (this.mForm.DialogResult == DialogResult.Cancel)
             {

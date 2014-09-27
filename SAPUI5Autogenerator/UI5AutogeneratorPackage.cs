@@ -28,7 +28,7 @@ namespace AtSebak.SAPUI5Autogenerator
     // in the Help/About dialog of Visual Studio.
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [Guid(GuidList.guidSAPUI5AutogeneratorPkgString)]
-    public sealed class SAPUI5AutogeneratorPackage : Package
+    public sealed class UI5AutogeneratorPackage : Package
     {
         /// <summary>
         /// Default constructor of the package.
@@ -37,7 +37,7 @@ namespace AtSebak.SAPUI5Autogenerator
         /// not sited yet inside Visual Studio environment. The place to do all the other 
         /// initialization is the Initialize method.
         /// </summary>
-        public SAPUI5AutogeneratorPackage()
+        public UI5AutogeneratorPackage()
         {
             Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
         }

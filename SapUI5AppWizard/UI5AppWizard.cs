@@ -1,18 +1,17 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using CodeGeneratorHelpers;
 
-namespace SapUI5AppWizard
+namespace UI5AppWizard
 {
-    public partial class SapUI5AppWizard : Form
+    public partial class UI5AppWizard : Form
     {
         /// <summary>
         /// Selecteds the project.
         /// </summary>
         /// <returns></returns>
-        public SapUI5ProjectType SelectedProject
+        public UI5ProjectType SelectedProject
         {
-            get { return this.desktop.Checked ? SapUI5ProjectType.Desktop : SapUI5ProjectType.Mobile; } 
+            get { return this.desktop.Checked ? UI5ProjectType.Desktop : UI5ProjectType.Mobile; } 
         }
 
         /// <summary>
@@ -41,9 +40,9 @@ namespace SapUI5AppWizard
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SapUI5AppWizard"/> class.
+        /// Initializes a new instance of the <see cref="UI5AppWizard"/> class.
         /// </summary>
-        public SapUI5AppWizard()
+        public UI5AppWizard()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace CodeGeneratorHelpers
 {
-    public enum SapUI5Library
+    public enum UI5Library
     {
         
     }

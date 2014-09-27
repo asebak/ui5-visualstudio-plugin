@@ -10,7 +10,7 @@ namespace CodeGeneratorHelpers
             this.MVCViewType = "sap.ui.core.mvc.ViewType.HTML";
         }
         public string viewExtension { get { return "html"; } }
-        public string createFromT4Template(SapUI5ProjectType type)
+        public string createFromT4Template(UI5ProjectType type)
         {
             var htmlTemplate = new T4.HTMLView
             {
@@ -18,7 +18,7 @@ namespace CodeGeneratorHelpers
                     new Dictionary<string, object>
                     {
                         {"ControllerName", this.ControllerName},
-                        {"IsMobile", type == SapUI5ProjectType.Mobile}
+                        {"IsMobile", type == UI5ProjectType.Mobile}
                     }
             };
             htmlTemplate.Initialize();
