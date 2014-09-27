@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAPUI5Autogenerator", "SAPUI5Autogenerator\SAPUI5Autogenerator.csproj", "{AED289B0-9386-4FF9-B141-8B7EBA6195F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI5Tools", "SAPUI5Autogenerator\UI5Tools.csproj", "{AED289B0-9386-4FF9-B141-8B7EBA6195F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProjectTemplates", "ProjectTemplates", "{B940B209-A2E3-4A8C-A934-4E7B7574B1C5}"
 EndProject

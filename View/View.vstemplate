@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <VSTemplate Version="3.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:sdk="http://schemas.microsoft.com/developer/vstemplate-sdkextension/2010">
   <TemplateData>
-    <Name>View</Name>
-    <Description>View</Description>
+    <Name>OpenUI5 View</Name>
+    <Description>An OpenUI5 View which can be XML, JS, HTML or JSON.</Description>
     <Icon>View.ico</Icon>
     <TemplateID>dd8424ec-e1f4-4cce-b90e-d3cbde11c118</TemplateID>
     <ProjectType>CSharp</ProjectType>
