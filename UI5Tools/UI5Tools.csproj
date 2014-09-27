@@ -158,14 +158,14 @@
     <Content Include="Resources\Package.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\i18n\i18n.csproj">
+    <ProjectReference Include="..\I18nTemplate\i18n.csproj">
       <Project>{20FD3BC3-6FBA-4AB7-BB15-D6E28B730981}</Project>
       <Name>i18n</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
-    <ProjectReference Include="..\Mobile\UI5App.csproj">
+    <ProjectReference Include="..\UI5AppTemplate\UI5App.csproj">
       <Project>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</Project>
       <Name>UI5App</Name>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3bBuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
@@ -173,11 +173,11 @@
       <VSIXSubPath>ProjectTemplates</VSIXSubPath>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\SapUI5AppWizard\UI5AppWizard.csproj">
+    <ProjectReference Include="..\UI5AppWizard\UI5AppWizard.csproj">
       <Project>{2f5e1eb6-62c4-4abf-a3c2-980234f0e7c8}</Project>
       <Name>UI5AppWizard</Name>
     </ProjectReference>
-    <ProjectReference Include="..\View\View.csproj">
+    <ProjectReference Include="..\ViewTemplate\View.csproj">
       <Project>{FFBB1D0E-A124-4F4A-9B4F-8CA403C8E5E8}</Project>
       <Name>View</Name>
       <VSIXSubPath>ItemTemplates</VSIXSubPath>
