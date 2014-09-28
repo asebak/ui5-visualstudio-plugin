@@ -14,8 +14,9 @@ http://visualstudiogallery.msdn.microsoft.com/aabd3f1e-fd57-43f5-8dde-54dd0355de
 ## Upcoming Features
 ```
 - Javascript intellisense for the framework
-- OData ASP.NET Web Api integration
-- XML View Editor and designer
+- OData ASP.NET Web Api integration(C#)
+- XML View Editor.
+- Build Add-on to minimize CSS and View/Controller Code for better performance and secruity.
 ```
 ## Support or Contact
 If you are having an difficulties using the extension, or want an additional feature or to report a bug.  Please report it on github.
