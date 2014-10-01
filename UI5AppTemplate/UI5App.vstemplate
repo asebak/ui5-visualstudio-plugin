@@ -23,6 +23,9 @@
       <Folder Name="main" TargetFolderName="$rootmodulepath$">
         <ProjectItem ReplaceParameters="true" TargetFileName="Main.controller.js">Main.controller.js</ProjectItem>
       </Folder>
+      <Folder Name="css" TargetFolderName="css">
+        <ProjectItem ReplaceParameters="true" TargetFileName="$rootmodulepath$.css">main.css</ProjectItem>
+      </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="Index.html">Index.html</ProjectItem>
       <Folder Name="util" TargetFolderName="util" />
       <ProjectItem ReplaceParameters="true" TargetFileName="Web.config">Web.config</ProjectItem>

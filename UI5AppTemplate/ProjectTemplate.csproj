@@ -60,6 +60,9 @@
     <Content Include="$rootmodulepath$\Main.controller.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\$rootmodulepath$.css"/>
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="util\" />
   </ItemGroup>
   <PropertyGroup>
