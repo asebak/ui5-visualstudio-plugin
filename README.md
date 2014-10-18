@@ -2,11 +2,14 @@
 
 ======
 ## Download
+```
 http://visualstudiogallery.msdn.microsoft.com/aabd3f1e-fd57-43f5-8dde-54dd0355defe
-
+```
 ## Extension Overview
+```
 This unofficial extension allows you to create basic OpenUI5 Apps that will run with IIS and an ASP.NET Web Project. It contains a project template that will allow you to create either a desktop or mobile HTML5 application for the SAP UI5 framework. 
 You can install it from the visual studio gallery:
+```
 
 ## Features
 ```
@@ -24,4 +27,7 @@ You can install it from the visual studio gallery:
 - Build Add-on to minimize CSS and View/Controller Code for better performance and secruity.
 ```
 ## Support or Contact
+```
 If you are having an difficulties using the extension, or want an additional feature or to report a bug.  Please report it on github.
+```
+
