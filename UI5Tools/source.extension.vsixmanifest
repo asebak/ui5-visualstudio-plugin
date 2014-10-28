@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="b8fd1f0c-040d-4f3c-b28e-75b39cbc310b" Version="1.12" Language="en-US" Publisher="At Sebak" />
+    <Identity Id="b8fd1f0c-040d-4f3c-b28e-75b39cbc310b" Version="1.13" Language="en-US" Publisher="At Sebak" />
     <DisplayName>OpenUI5</DisplayName>
     <Description xml:space="preserve">Project Items and Templates for the OpenUI5 Framework</Description>
     <MoreInfo >https://openui5.hana.ondemand.com/#content/Overview.html</MoreInfo>
     <GettingStartedGuide>http://sap.github.io/openui5/getstarted.html</GettingStartedGuide>
+    <ReleaseNotes>Update CSS Reference to index.html project template</ReleaseNotes>
     <Icon>openui5logo.png</Icon>
     <PreviewImage>openui5logo.png</PreviewImage>
     <Tags>openui5, ui5, sap, jquery, html5, web api</Tags>
