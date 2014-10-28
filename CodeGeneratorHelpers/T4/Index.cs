@@ -65,16 +65,23 @@ if(!isMobile){
             
             #line default
             #line hidden
-            this.Write("   ");
+            this.Write("   \t    <link href=\"css/");
             
             #line 32 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
+            
+            #line default
+            #line hidden
+            this.Write(".css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n   ");
+            
+            #line 33 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
  if(!isMobile){ 
             
             #line default
             #line hidden
             this.Write("\t\t<script>\r\n\t\t\t\tsap.ui.localResources(\"");
             
-            #line 34 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 35 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
@@ -82,28 +89,28 @@ if(!isMobile){
             this.Write("\");\r\n\t\t\t\tsap.ui.localResources(\"util\");\r\n\t\t\t\tsap.ui.localResources(\"i18n\");\r\n\t\t\t\t" +
                     "var view = sap.ui.view({viewName:\"");
             
-            #line 37 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 38 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
             #line hidden
             this.Write(".Main\", type:sap.ui.core.mvc.ViewType.");
             
-            #line 37 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 38 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write("});\r\n\t\t\t\tview.placeAt(\"content\");\r\n\t\t</script>\r\n");
             
-            #line 40 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 41 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
 }else{ 
             
             #line default
             #line hidden
             this.Write("\t\t<script>\r\n\t\t\t\tsap.ui.localResources(\"");
             
-            #line 42 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 43 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
@@ -112,21 +119,21 @@ if(!isMobile){
                     "var app = new sap.m.App({initialPage:\"app\"});\r\n\t\t\t\tvar page = sap.ui.view({id:\"a" +
                     "pp\", viewName:\"");
             
-            #line 46 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 47 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(controllerName));
             
             #line default
             #line hidden
             this.Write(".Main\", type:sap.ui.core.mvc.ViewType.");
             
-            #line 46 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 47 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(extension));
             
             #line default
             #line hidden
             this.Write("});\r\n\t\t\t\tapp.addPage(page);\r\n\t\t\t\tapp.placeAt(\"content\");\r\n\t\t</script>\r\n");
             
-            #line 50 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
+            #line 51 "C:\Users\abdo\Documents\GitHub\SapUI5-VisualStudioPlugin\CodeGeneratorHelpers\T4\Index.tt"
  } 
             
             #line default

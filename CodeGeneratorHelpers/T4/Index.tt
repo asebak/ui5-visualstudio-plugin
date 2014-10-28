@@ -29,6 +29,7 @@ var extension = this.ViewExtension;
 				data-sap-ui-theme="sap_bluecrystal">
 		</script>
    <#}#>
+   	    <link href="css/<#= controllerName #>.css" rel="stylesheet" type="text/css"/>
    <# if(!isMobile){ #>
 		<script>
 				sap.ui.localResources("<#= controllerName #>");
