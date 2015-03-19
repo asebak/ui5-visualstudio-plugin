@@ -165,6 +165,12 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <IncludeOutputGroupsInVSIX>TemplateProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
     </ProjectReference>
+    <ProjectReference Include="..\JavascriptLanguage\JavascriptLanguage.csproj">
+      <Project>{75763F0F-7DE2-462D-B376-1FC753FBE8C7}</Project>
+      <Name>JavascriptLanguage</Name>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
+    </ProjectReference>
     <ProjectReference Include="..\UI5AppTemplate\UI5App.csproj">
       <Project>{7447843E-0B98-4C04-B78A-CDFE2123F9B3}</Project>
       <Name>UI5App</Name>
