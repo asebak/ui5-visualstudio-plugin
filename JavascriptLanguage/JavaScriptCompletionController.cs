@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Created by Ahmad Sebak on 19/03/2015
+
+#region Using
+
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.Composition;
@@ -6,10 +10,8 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio;
 using Microsoft.VisualStudio.Editor;
 using Microsoft.VisualStudio.JSLS;
-using Microsoft.VisualStudio.Language.Intellisense;
 using Microsoft.VisualStudio.Language.StandardClassification;
 using Microsoft.VisualStudio.OLE.Interop;
 using Microsoft.VisualStudio.Text;
@@ -21,24 +23,24 @@ using Microsoft.VisualStudio.Utilities;
 using Microsoft.Web.Editor;
 using Intel = Microsoft.VisualStudio.Language.Intellisense;
 
+#endregion
+
 namespace JavascriptLanguage
 {
-    [Export(typeof(IWpfTextViewConnectionListener))]
+    [Export(typeof (IWpfTextViewConnectionListener))]
     [ContentType("javascript")]
     [ContentType("node.js")]
     [TextViewRole(PredefinedTextViewRoles.Interactive)]
     internal sealed class JsTextViewCreationListener : IWpfTextViewConnectionListener
     {
-        [Import]
-        ICompletionBroker CompletionBroker = null;
-
-        [Import]
-        IStandardClassificationService _standardClassifications = null;
+        [Import] private IStandardClassificationService _standardClassifications;
+        [Import] private Intel.ICompletionBroker CompletionBroker;
 
         [Import]
         internal IVsEditorAdaptersFactoryService EditorAdaptersFactoryService { get; set; }
 
-        public async void SubjectBuffersConnected(IWpfTextView textView, ConnectionReason reason, Collection<ITextBuffer> subjectBuffers)
+        public async void SubjectBuffersConnected(IWpfTextView textView, ConnectionReason reason,
+            Collection<ITextBuffer> subjectBuffers)
         {
             if (textView.Properties.ContainsProperty("JsCommandFilter"))
                 return;
@@ -47,7 +49,8 @@ namespace JavascriptLanguage
                 return;
 
             var adapter = EditorAdaptersFactoryService.GetViewAdapter(textView);
-            var filter = textView.Properties.GetOrCreateSingletonProperty<JsCommandFilter>("JsCommandFilter", () => new JsCommandFilter(textView, CompletionBroker, _standardClassifications));
+            var filter = textView.Properties.GetOrCreateSingletonProperty("JsCommandFilter",
+                () => new JsCommandFilter(textView, CompletionBroker, _standardClassifications));
 
             int tries = 0;
 
@@ -66,16 +69,24 @@ namespace JavascriptLanguage
                 if (IsJSLSInstalled(next) || ++tries > 10)
                     return;
                 await Task.Delay(500);
-                adapter.RemoveCommandFilter(filter);    // Remove the too-early filter and try again.
+                adapter.RemoveCommandFilter(filter); // Remove the too-early filter and try again.
             }
         }
 
-        ///<summary>Attempts to figure out whether the JSLS language service has been installed yet.</summary>
-        [SuppressMessage("Microsoft.Usage", "CA1806:DoNotIgnoreMethodResults", MessageId = "Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus(System.Guid@,System.UInt32,Microsoft.VisualStudio.OLE.Interop.OLECMD[],System.IntPtr)")]
-        static bool IsJSLSInstalled(IOleCommandTarget next)
+        public void SubjectBuffersDisconnected(IWpfTextView textView, ConnectionReason reason,
+            Collection<ITextBuffer> subjectBuffers)
+        {
+        }
+
+        /// <summary>Attempts to figure out whether the JSLS language service has been installed yet.</summary>
+        [SuppressMessage("Microsoft.Usage", "CA1806:DoNotIgnoreMethodResults",
+            MessageId =
+                "Microsoft.VisualStudio.OLE.Interop.IOleCommandTarget.QueryStatus(System.Guid@,System.UInt32,Microsoft.VisualStudio.OLE.Interop.OLECMD[],System.IntPtr)"
+            )]
+        private static bool IsJSLSInstalled(IOleCommandTarget next)
         {
             Guid cmdGroup = VSConstants.VSStd2K;
-            var cmds = new[] { new OLECMD { cmdID = (uint)VSConstants.VSStd2KCmdID.AUTOCOMPLETE } };
+            var cmds = new[] {new OLECMD {cmdID = (uint) VSConstants.VSStd2KCmdID.AUTOCOMPLETE}};
 
             try
             {
@@ -87,45 +98,27 @@ namespace JavascriptLanguage
                 return false;
             }
         }
-
-        public void SubjectBuffersDisconnected(IWpfTextView textView, ConnectionReason reason, Collection<ITextBuffer> subjectBuffers)
-        { }
     }
 
     internal sealed class JsCommandFilter : IOleCommandTarget
     {
+        private static readonly Type jsTaggerType =
+            typeof (JavaScriptLanguageService).Assembly.GetType("Microsoft.VisualStudio.JSLS.Classification.Tagger");
+
+        private Intel.ICompletionSession _currentSession;
         private readonly IStandardClassificationService _standardClassifications;
-        private ICompletionSession _currentSession;
-        static readonly Type jsTaggerType = typeof(JavaScriptLanguageService).Assembly.GetType("Microsoft.VisualStudio.JSLS.Classification.Tagger");
 
-        public IWpfTextView TextView { get; private set; }
-        public ICompletionBroker Broker { get; private set; }
-        public IOleCommandTarget Next { get; set; }
-
-        private static char GetTypeChar(IntPtr pvaIn)
-        {
-            return (char)(ushort)Marshal.GetObjectForNativeVariant(pvaIn);
-        }
-
-        public JsCommandFilter(IWpfTextView textView, ICompletionBroker CompletionBroker, IStandardClassificationService standardClassifications)
+        public JsCommandFilter(IWpfTextView textView, Intel.ICompletionBroker CompletionBroker,
+            IStandardClassificationService standardClassifications)
         {
             TextView = textView;
             Broker = CompletionBroker;
             _standardClassifications = standardClassifications;
         }
 
-        IEnumerable<IClassificationType> GetCaretClassifications()
-        {
-            var buffers = TextView.BufferGraph.GetTextBuffers(b => b.ContentType.IsOfType("JavaScript") && TextView.GetSelection("JavaScript").HasValue && TextView.GetSelection("JavaScript").Value.Snapshot.TextBuffer == b);
-
-            if (!buffers.Any())
-                return Enumerable.Empty<IClassificationType>();
-
-            var tagger = buffers.First().Properties.GetProperty<ITagger<ClassificationTag>>(jsTaggerType);
-
-            return tagger.GetTags(new NormalizedSnapshotSpanCollection(new SnapshotSpan(TextView.Caret.Position.BufferPosition, 0)))
-                    .Select(s => s.Tag.ClassificationType);
-        }
+        public IWpfTextView TextView { get; private set; }
+        public Intel.ICompletionBroker Broker { get; private set; }
+        public IOleCommandTarget Next { get; set; }
 
         [SuppressMessage("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         public int Exec(ref Guid pguidCmdGroup, uint nCmdID, uint nCmdexecopt, IntPtr pvaIn, IntPtr pvaOut)
@@ -138,7 +131,7 @@ namespace JavascriptLanguage
             bool isInString = classifications.Contains(_standardClassifications.StringLiteral);
             bool isInComment = classifications.Contains(_standardClassifications.Comment);
 
-            var command = (VSConstants.VSStd2KCmdID)nCmdID;
+            var command = (VSConstants.VSStd2KCmdID) nCmdID;
             if (!isInString && !isInComment)
             {
                 if (command != VSConstants.VSStd2KCmdID.TYPECHAR)
@@ -166,7 +159,6 @@ namespace JavascriptLanguage
                         // If the user typed a closing quote, remove any trailing semicolon to match
                         if (_currentSession != null)
                         {
-
                             var s = _currentSession.SelectedCompletionSet.SelectionStatus;
                             if (s.IsSelected && s.Completion.InsertionText.EndsWith(ch + ";", StringComparison.Ordinal))
                                 s.Completion.InsertionText = s.Completion.InsertionText.TrimEnd(';');
@@ -222,7 +214,8 @@ namespace JavascriptLanguage
                     char ch = GetTypeChar(pvaIn);
                     if (ch == ':' || ch == ' ')
                         Cancel();
-                    else if (ch == '"' || ch == '\'' || ch == '/' || ch == '.' || ch == '@' || (!char.IsPunctuation(ch) && !char.IsControl(ch)))
+                    else if (ch == '"' || ch == '\'' || ch == '/' || ch == '.' || ch == '@' ||
+                             (!char.IsPunctuation(ch) && !char.IsControl(ch)))
                     {
                         if (!closedCompletion)
                             StartSession();
@@ -241,7 +234,8 @@ namespace JavascriptLanguage
                         var p = _currentSession.GetTriggerPoint(TextView.TextBuffer.CurrentSnapshot);
                         if (p != null
                             && (p.Value.Position >= p.Value.Snapshot.Length
-                             || p.Value.GetChar() != _currentSession.CompletionSets[0].Completions[0].InsertionText[0])
+                                ||
+                                p.Value.GetChar() != _currentSession.CompletionSets[0].Completions[0].InsertionText[0])
                             )
                             Cancel();
                     }
@@ -250,6 +244,45 @@ namespace JavascriptLanguage
             }
 
             return hresult;
+        }
+
+        public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
+        {
+            if (pguidCmdGroup == VSConstants.VSStd2K)
+            {
+                switch ((VSConstants.VSStd2KCmdID) prgCmds[0].cmdID)
+                {
+                    case VSConstants.VSStd2KCmdID.AUTOCOMPLETE:
+                    case VSConstants.VSStd2KCmdID.SHOWMEMBERLIST:
+                    case VSConstants.VSStd2KCmdID.COMPLETEWORD:
+                        prgCmds[0].cmdf = (uint) OLECMDF.OLECMDF_ENABLED | (uint) OLECMDF.OLECMDF_SUPPORTED;
+                        return VSConstants.S_OK;
+                }
+            }
+            return Next.QueryStatus(pguidCmdGroup, cCmds, prgCmds, pCmdText);
+        }
+
+        private static char GetTypeChar(IntPtr pvaIn)
+        {
+            return (char) (ushort) Marshal.GetObjectForNativeVariant(pvaIn);
+        }
+
+        private IEnumerable<IClassificationType> GetCaretClassifications()
+        {
+            var buffers =
+                TextView.BufferGraph.GetTextBuffers(
+                    b =>
+                        b.ContentType.IsOfType("JavaScript") && TextView.GetSelection("JavaScript").HasValue &&
+                        TextView.GetSelection("JavaScript").Value.Snapshot.TextBuffer == b);
+
+            if (!buffers.Any())
+                return Enumerable.Empty<IClassificationType>();
+
+            var tagger = buffers.First().Properties.GetProperty<ITagger<ClassificationTag>>(jsTaggerType);
+
+            return tagger.GetTags(
+                new NormalizedSnapshotSpanCollection(new SnapshotSpan(TextView.Caret.Position.BufferPosition, 0)))
+                .Select(s => s.Tag.ClassificationType);
         }
 
         private bool IsValidTextBuffer()
@@ -267,7 +300,8 @@ namespace JavascriptLanguage
 
                 foreach (ITextBuffer buffer in buffers)
                 {
-                    SnapshotPoint? point = TextView.BufferGraph.MapDownToBuffer(snapshotPoint, PointTrackingMode.Negative, buffer, PositionAffinity.Predecessor);
+                    SnapshotPoint? point = TextView.BufferGraph.MapDownToBuffer(snapshotPoint,
+                        PointTrackingMode.Negative, buffer, PositionAffinity.Predecessor);
 
                     if (point.HasValue)
                         return false;
@@ -286,7 +320,7 @@ namespace JavascriptLanguage
             _currentSession.SelectedCompletionSet.Recalculate();
         }
 
-        bool Cancel()
+        private bool Cancel()
         {
             if (_currentSession == null)
                 return false;
@@ -296,7 +330,7 @@ namespace JavascriptLanguage
             return true;
         }
 
-        Intel.Completion Complete(bool force, bool dontAdvance = false)
+        private Intel.Completion Complete(bool force, bool dontAdvance = false)
         {
             if (_currentSession == null)
                 return null;
@@ -306,45 +340,43 @@ namespace JavascriptLanguage
                 _currentSession.Dismiss();
                 return null;
             }
-            else
-            {
-                var positionNullable = _currentSession.GetTriggerPoint(TextView.TextBuffer.CurrentSnapshot);
-                var completion = _currentSession.SelectedCompletionSet.SelectionStatus.Completion;
+            var positionNullable = _currentSession.GetTriggerPoint(TextView.TextBuffer.CurrentSnapshot);
+            var completion = _currentSession.SelectedCompletionSet.SelectionStatus.Completion;
 
-                // After this line, _currentSession will be null.  Do not use it.
-                _currentSession.Commit();
+            // After this line, _currentSession will be null.  Do not use it.
+            _currentSession.Commit();
 
-                if (positionNullable == null)
-                    return null;
-                var position = positionNullable.Value;
+            if (positionNullable == null)
+                return null;
+            var position = positionNullable.Value;
 
-                if (position.Position == TextView.TextBuffer.CurrentSnapshot.Length)
-                    return completion;  // If the cursor is at the end of the document, don't choke
+            if (position.Position == TextView.TextBuffer.CurrentSnapshot.Length)
+                return completion; // If the cursor is at the end of the document, don't choke
 
-                // If applicable, move the cursor to the end of the function call.
-                // Unless the user is in completing a deeper Node.js require path,
-                // in which case we should stay inside the string.
-                if (dontAdvance || completion.InsertionText.EndsWith("/", StringComparison.Ordinal))
-                    return completion;
-
-                // If the user completed a Node require path (which won't have any
-                // quotes in the completion, move past any existing closing quote.
-                // Other completions will include the closing quote themselves, so
-                // we don't need to move 
-                if (!completion.InsertionText.EndsWith("'", StringComparison.Ordinal) && !completion.InsertionText.EndsWith("\"", StringComparison.Ordinal)
-                    && (position.GetChar() == '"' || position.GetChar() == '\''))
-                    TextView.Caret.MoveToNextCaretPosition();
-                // In either case, if there is a closing parenthesis, move past it
-                var prevChar = position.GetChar();
-                if ((prevChar == '"' || prevChar == '\'')
-                 && TextView.Caret.Position.BufferPosition < TextView.TextBuffer.CurrentSnapshot.Length
-                 && TextView.Caret.Position.BufferPosition.GetChar() == ')')
-                    TextView.Caret.MoveToNextCaretPosition();
+            // If applicable, move the cursor to the end of the function call.
+            // Unless the user is in completing a deeper Node.js require path,
+            // in which case we should stay inside the string.
+            if (dontAdvance || completion.InsertionText.EndsWith("/", StringComparison.Ordinal))
                 return completion;
-            }
+
+            // If the user completed a Node require path (which won't have any
+            // quotes in the completion, move past any existing closing quote.
+            // Other completions will include the closing quote themselves, so
+            // we don't need to move 
+            if (!completion.InsertionText.EndsWith("'", StringComparison.Ordinal) &&
+                !completion.InsertionText.EndsWith("\"", StringComparison.Ordinal)
+                && (position.GetChar() == '"' || position.GetChar() == '\''))
+                TextView.Caret.MoveToNextCaretPosition();
+            // In either case, if there is a closing parenthesis, move past it
+            var prevChar = position.GetChar();
+            if ((prevChar == '"' || prevChar == '\'')
+                && TextView.Caret.Position.BufferPosition < TextView.TextBuffer.CurrentSnapshot.Length
+                && TextView.Caret.Position.BufferPosition.GetChar() == ')')
+                TextView.Caret.MoveToNextCaretPosition();
+            return completion;
         }
 
-        bool StartSession()
+        private bool StartSession()
         {
             if (_currentSession != null)
                 return false;
@@ -354,7 +386,8 @@ namespace JavascriptLanguage
 
             if (!Broker.IsCompletionActive(TextView))
             {
-                _currentSession = Broker.CreateCompletionSession(TextView, snapshot.CreateTrackingPoint(caret, PointTrackingMode.Positive), true);
+                _currentSession = Broker.CreateCompletionSession(TextView,
+                    snapshot.CreateTrackingPoint(caret, PointTrackingMode.Positive), true);
             }
             else
             {
@@ -366,22 +399,6 @@ namespace JavascriptLanguage
                 _currentSession.Start();
 
             return true;
-        }
-
-        public int QueryStatus(ref Guid pguidCmdGroup, uint cCmds, OLECMD[] prgCmds, IntPtr pCmdText)
-        {
-            if (pguidCmdGroup == VSConstants.VSStd2K)
-            {
-                switch ((VSConstants.VSStd2KCmdID)prgCmds[0].cmdID)
-                {
-                    case VSConstants.VSStd2KCmdID.AUTOCOMPLETE:
-                    case VSConstants.VSStd2KCmdID.SHOWMEMBERLIST:
-                    case VSConstants.VSStd2KCmdID.COMPLETEWORD:
-                        prgCmds[0].cmdf = (uint)OLECMDF.OLECMDF_ENABLED | (uint)OLECMDF.OLECMDF_SUPPORTED;
-                        return VSConstants.S_OK;
-                }
-            }
-            return Next.QueryStatus(pguidCmdGroup, cCmds, prgCmds, pCmdText);
         }
     }
 }

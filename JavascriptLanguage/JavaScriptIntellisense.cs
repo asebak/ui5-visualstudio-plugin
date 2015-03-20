@@ -1,11 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// Created by Ahmad Sebak on 19/03/2015
+
+#region Using
+
+using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Win32;
+
+#endregion
 
 namespace JavascriptLanguage
 {
@@ -15,6 +17,7 @@ namespace JavascriptLanguage
         {
             RegisterFile("Resources\\SAPUI5.Intellisense.js", root);
         }
+
         private static void RegisterFile(string path, RegistryKey root)
         {
             try
@@ -31,13 +34,13 @@ namespace JavascriptLanguage
                     if (key == null)
                         return;
                     key.SetValue("ReferenceGroups_WE", "Implicit (Web)|" + userPath + ";");
-                    return;
                 }
             }
             catch (Exception ex)
             {
             }
         }
+
         private static string GetUserFilePath(string fileName)
         {
             string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);

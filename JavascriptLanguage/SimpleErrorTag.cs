@@ -1,15 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Created by Ahmad Sebak on 19/03/2015
+
+#region Using
+
 using Microsoft.CSS.Core;
+
+#endregion
 
 namespace JavascriptLanguage
 {
     internal class SimpleErrorTag : ICssError
     {
-
         //public SimpleErrorTag(ParseItem item, string errorMessage, CssErrorFlags flags)
         //    : this(item, errorMessage, item.AfterEnd - item.Start, flags)
         //{ }
@@ -32,8 +32,16 @@ namespace JavascriptLanguage
         public ParseItem Item { get; private set; }
         public string Text { get; private set; }
 
-        public int AfterEnd { get { return Item.AfterEnd; } }
-        public int Start { get { return Item.Start; } }
+        public int AfterEnd
+        {
+            get { return Item.AfterEnd; }
+        }
+
+        public int Start
+        {
+            get { return Item.Start; }
+        }
+
         public int Length { get; private set; }
         public CssErrorFlags Flags { get; private set; }
     }

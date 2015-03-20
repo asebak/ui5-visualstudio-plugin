@@ -1,20 +1,62 @@
-﻿using System;
+﻿// Created by Ahmad Sebak on 19/03/2015
+
+#region Using
+
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Linq;
 using Microsoft.CSS.Core;
 using Microsoft.CSS.Editor.Intellisense;
 using Microsoft.Html.Schemas;
 using Microsoft.Html.Schemas.Model;
-using Microsoft.VisualStudio.Utilities;
+
+#endregion
 
 namespace JavascriptLanguage
 {
     public class UnknownTagErrorTagProvider : ICssItemChecker
     {
-        private HashSet<string> _cache = new HashSet<string>(BuildCache());
-        private static HashSet<string> _basicIgnore = new HashSet<string>() { "noscript", "font", "___all___", "FlowContentElement" };
-        private static HashSet<string> _cssIgnore = new HashSet<string>(_basicIgnore) { "script", "meta", "link", "style", "head", };
+        private readonly HashSet<string> _cache = new HashSet<string>(BuildCache());
+
+        public static IEnumerable<IHtmlSchema> Schemas
+        {
+            get
+            {
+                HtmlSchemaManager mng = new HtmlSchemaManager();
+                IHtmlSchema html = mng.GetSchema("http://schemas.microsoft.com/intellisense/html");
+
+                var schemas = mng.CustomAttributePrefixes.SelectMany(p => mng.GetSupplementalSchemas(p)).ToList();
+                schemas.Insert(0, html);
+
+                return schemas;
+            }
+        }
+
+        public ItemCheckResult CheckItem(ParseItem item, ICssCheckerContext context)
+        {
+            ItemName itemName = (ItemName) item;
+
+            if (!itemName.IsValid || context == null ||
+                (item.PreviousSibling != null && item.PreviousSibling.Text == "["))
+                return ItemCheckResult.Continue;
+
+            if (!_cache.Contains(itemName.Text.ToLowerInvariant()) && itemName.Text.IndexOf('-') == -1)
+            {
+                string error = "Validation: \"" + itemName.Text + "\" isn't a valid HTML tag.";
+                //todo maybe readd
+                //ICssError tag = new SimpleErrorTag(itemName, error);
+                //context.AddError(tag);
+
+                return ItemCheckResult.CancelCurrentItem;
+            }
+
+            return ItemCheckResult.Continue;
+        }
+
+        public IEnumerable<Type> ItemTypes
+        {
+            get { return new[] {typeof (ItemName)}; }
+        }
 
         private static IEnumerable<string> BuildCache()
         {
@@ -34,53 +76,33 @@ namespace JavascriptLanguage
                 foreach (var element in schema.GetTopLevelElements())
                 {
                     if (!ignoreList.Contains(element.Name))
-                        yield return new CompletionListEntry(element.Name) { Description = element.Description.Description };
+                        yield return
+                            new CompletionListEntry(element.Name) {Description = element.Description.Description};
 
                     foreach (var child in element.GetChildren())
                     {
                         if (!ignoreList.Contains(child.Name))
-                            yield return new CompletionListEntry(child.Name) { Description = child.Description.Description };
+                            yield return
+                                new CompletionListEntry(child.Name) {Description = child.Description.Description};
                     }
                 }
         }
 
-        public static IEnumerable<IHtmlSchema> Schemas
+        private static readonly HashSet<string> _basicIgnore = new HashSet<string>
         {
-            get
-            {
-                HtmlSchemaManager mng = new HtmlSchemaManager();
-                IHtmlSchema html = mng.GetSchema("http://schemas.microsoft.com/intellisense/html");
+            "noscript",
+            "font",
+            "___all___",
+            "FlowContentElement"
+        };
 
-                var schemas = mng.CustomAttributePrefixes.SelectMany(p => mng.GetSupplementalSchemas(p)).ToList();
-                schemas.Insert(0, html);
-
-                return schemas;
-            }
-        }
-
-        public ItemCheckResult CheckItem(ParseItem item, ICssCheckerContext context)
+        private static readonly HashSet<string> _cssIgnore = new HashSet<string>(_basicIgnore)
         {
-            ItemName itemName = (ItemName)item;
-
-            if (!itemName.IsValid || context == null || (item.PreviousSibling != null && item.PreviousSibling.Text == "["))
-                return ItemCheckResult.Continue;
-
-            if (!_cache.Contains(itemName.Text.ToLowerInvariant()) && itemName.Text.IndexOf('-') == -1)
-            {
-                string error = "Validation: \"" + itemName.Text + "\" isn't a valid HTML tag.";
-                //todo maybe readd
-                //ICssError tag = new SimpleErrorTag(itemName, error);
-                //context.AddError(tag);
-
-                return ItemCheckResult.CancelCurrentItem;
-            }
-
-            return ItemCheckResult.Continue;
-        }
-
-        public IEnumerable<Type> ItemTypes
-        {
-            get { return new[] { typeof(ItemName) }; }
-        }
+            "script",
+            "meta",
+            "link",
+            "style",
+            "head"
+        };
     }
 }

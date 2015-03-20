@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Created by Ahmad Sebak on 19/03/2015
+
+#region Using
+
+using System;
 using System.Windows.Media;
 using Microsoft.CSS.Editor;
 using Microsoft.CSS.Editor.Intellisense;
@@ -11,26 +11,24 @@ using Microsoft.VisualStudio.Text;
 using Microsoft.Web.Editor;
 using Microsoft.Web.Editor.Intellisense;
 
+#endregion
+
 namespace JavascriptLanguage
 {
     internal class CompletionListEntry : ICssCompletionListEntry
     {
-        private string _name;
-        private StandardGlyphGroup _glyph;
+        private readonly StandardGlyphGroup _glyph;
 
-        public CompletionListEntry(string name, int sortingPriority = 0, StandardGlyphGroup glyph = StandardGlyphGroup.GlyphGroupEnumMember)
+        public CompletionListEntry(string name, int sortingPriority = 0,
+            StandardGlyphGroup glyph = StandardGlyphGroup.GlyphGroupEnumMember)
         {
-            _name = name;
+            DisplayText = name;
             _glyph = glyph;
             SortingPriority = sortingPriority;
         }
 
         public string Description { get; set; }
-
-        public string DisplayText
-        {
-            get { return _name; }
-        }
+        public string DisplayText { get; private set; }
 
         public string GetSyntax(Version version)
         {
@@ -63,7 +61,6 @@ namespace JavascriptLanguage
         }
 
         public int SortingPriority { get; set; }
-
 
         public bool IsSupported(BrowserVersion browser)
         {
