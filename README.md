@@ -20,11 +20,11 @@ a desktop or mobile HTML5 application for the SAP UI5 framework.
 - I18n Properties project item template
 - SAP UI5 View Templates (XML, HTML, JSON, JS) item template
 - Intellisense Works on the index.html file be default in VS
+- Javascript intellisense for the framework
 ```
 
 ## Future Releases
 ```
-- Javascript intellisense for the framework
 - OData ASP.NET Web Api integration(C#)
 - XML View Editor.
 - Build Add-on to minimize CSS and View/Controller Code for better performance and secruity.
