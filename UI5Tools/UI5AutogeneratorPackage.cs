@@ -56,7 +56,7 @@ namespace AtSebak.SAPUI5Autogenerator
         protected override void Initialize()
         {
             Debug.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
-            //JavaScriptIntellisense.Register(UserRegistryRoot);
+            JavaScriptIntellisense.Register(UserRegistryRoot);
             base.Initialize();
 
         }

@@ -97,17 +97,20 @@ namespace JavascriptLanguage
 
         private List<Completion> GetCompletions(string text, Namespace elements)
         {
-            //return null;
-            List<Completion> completions = new List<Completion>();
+            var completions = new List<Completion>();
 
             if (elements.Children == null)
             {
                 completions.Add(new Completion(elements.Description, elements.Description, elements.Description, _glyph,
                     null));
             }
-            elements.Children.Items.ForEach(
-                child =>
-                    completions.Add(new Completion(child.Description, child.Description, child.Description, _glyph, null)));
+            else
+            {
+                elements.Children.Items.ForEach(
+                    child =>
+                        completions.Add(new Completion(child.Description, child.Description, child.Description, _glyph,
+                            null)));
+            }
             return completions;
         }
 

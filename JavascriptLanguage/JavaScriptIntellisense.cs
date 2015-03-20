@@ -22,31 +22,33 @@ namespace JavascriptLanguage
         {
             try
             {
-                string userPath = GetUserFilePath(Path.GetFileName(path));
-                string assembly = Assembly.GetExecutingAssembly().Location;
-                string folder = Path.GetDirectoryName(assembly).ToLowerInvariant();
-                string file = Path.Combine(folder, path);
+                var userPath = GetUserFilePath(Path.GetFileName(path));
+                var assembly = Assembly.GetExecutingAssembly().Location;
+                var folder = Path.GetDirectoryName(assembly).ToLowerInvariant();
+                var file = Path.Combine(folder, path);
                 if (!File.Exists(file))
                     return;
                 File.Copy(file, userPath, true);
-                using (RegistryKey key = root.OpenSubKey("JavaScriptLanguageService", true))
+                using (var key = root.OpenSubKey("JavaScriptLanguageService", true))
                 {
                     if (key == null)
                         return;
                     key.SetValue("ReferenceGroups_WE", "Implicit (Web)|" + userPath + ";");
                 }
             }
-            catch (Exception ex)
+            catch
             {
             }
         }
 
         private static string GetUserFilePath(string fileName)
         {
-            string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            string WE_folder = Path.Combine(folder, "Web Essentials 2015");
+            var folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            var WE_folder = Path.Combine(folder, "SAP UI5 VS Plugin");
             if (!Directory.Exists(WE_folder))
+            {
                 Directory.CreateDirectory(WE_folder);
+            }
             return Path.Combine(WE_folder, fileName);
         }
     }

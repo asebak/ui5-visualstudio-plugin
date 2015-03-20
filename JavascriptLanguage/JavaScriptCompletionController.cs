@@ -29,7 +29,6 @@ namespace JavascriptLanguage
 {
     [Export(typeof (IWpfTextViewConnectionListener))]
     [ContentType("javascript")]
-    [ContentType("node.js")]
     [TextViewRole(PredefinedTextViewRoles.Interactive)]
     internal sealed class JsTextViewCreationListener : IWpfTextViewConnectionListener
     {
@@ -53,13 +52,6 @@ namespace JavascriptLanguage
                 () => new JsCommandFilter(textView, CompletionBroker, _standardClassifications));
 
             int tries = 0;
-
-            // Ugly ugly hack
-            // Keep trying to register our filter until after the JSLS CommandFilter
-            // is added so we can catch completion before JSLS swallows all of them.
-            // To confirm this, click Debug, New Breakpoint, Break at Function, type
-            // Microsoft.VisualStudio.JSLS.TextView.TextView.CreateCommandFilter,
-            // then make sure that our last filter is added after that runs.
             while (true)
             {
                 IOleCommandTarget next;
